@@ -1,11 +1,11 @@
-# arc-cdktf
+# arc-cdk
 
 This package contains cdktf constructs for easily creating AWS infrastructure.
 
 ### Installation
 
 ```bash
-npm install arc-cdktf
+npm install arc-cdk
 ```
 
 ## Available Constructs
@@ -19,7 +19,7 @@ npm install arc-cdktf
 - lambdaWithSns
 - lambdaWithSqs
 
-Refer [API.md](https://github.com/sourcefuse/arc-cdktf/blob/main/API.md) file for API reference.
+Refer [API.md](https://github.com/sourcefuse/arc-cdk/blob/main/API.md) file for API reference.
 
 ### Example
 
@@ -30,7 +30,7 @@ import { App, TerraformStack } from "cdktf";
 import { Construct } from "constructs";
 import * as dotenv from "dotenv";
 import { resolve } from "path";
-import { ILambda, Lambda } from "ar-cdktf";
+import { ILambda, Lambda } from "arc-cdk";
 
 dotenv.config();
 export class LambdaStack extends TerraformStack {

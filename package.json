@@ -1,8 +1,8 @@
 {
-  "name": "arc-cdktf",
+  "name": "arc-cdk",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sourcefuse/arc-cdktf"
+    "url": "https://github.com/sourcefuse/arc-cdk"
   },
   "scripts": {
     "build": "npx projen build",
