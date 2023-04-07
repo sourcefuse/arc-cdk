@@ -12,13 +12,37 @@ const project = new cdktf.ConstructLibraryCdktf({
   stability: "experimental",
   peerDeps: ["@cdktf/provider-aws@^12.0.4"],
   depsUpgrade: false,
-  // deps: [],
-  // deps: ["cdktf-tf-module-stack@^0.2.0", "ts-essentials@^9.3.0"],
-  // bundledDeps: ["cdktf-tf-module-stack@^0.2.0", "ts-essentials@^9.3.0"],
-
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  devDeps: [
+    "markdown-toc@^1.2.0",
+    // "lint-staged@^13.1.0",
+    "husky@^8.0.3",
+    "@commitlint/cli@^17.4.4",
+    "@commitlint/config-conventional@^17.4.4",
+    "commitizen@^4.3.0",
+    "cz-conventional-changelog@^3.3.0",
+    "cz-customizable@^7.0.0",
+  ],
+  postBuildSteps: [
+    {
+      name: "toc",
+      run: "node toc.js",
+    },
+  ],
+});
+project.setScript("prepare", "husky install");
+// project.setScript("lint-staged", "lint-staged");
+project.setScript("postbuild", "node toc.js");
+project.addFields({
+  // "lint-staged": {
+  //   "API.md": "node toc.js",
+  // },
+  config: {
+    commitizen: {
+      path: "./node_modules/cz-customizable",
+    },
+    "cz-customizable": {
+      config: "./.cz-config.cjs",
+    },
+  },
 });
 project.synth();
