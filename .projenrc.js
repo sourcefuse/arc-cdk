@@ -14,7 +14,6 @@ const project = new cdktf.ConstructLibraryCdktf({
   depsUpgrade: false,
   devDeps: [
     "markdown-toc@^1.2.0",
-    // "lint-staged@^13.1.0",
     "husky@^8.0.3",
     "@commitlint/cli@^17.4.4",
     "@commitlint/config-conventional@^17.4.4",
@@ -30,12 +29,8 @@ const project = new cdktf.ConstructLibraryCdktf({
   ],
 });
 project.setScript("prepare", "husky install");
-// project.setScript("lint-staged", "lint-staged");
 project.setScript("postbuild", "node toc.js");
 project.addFields({
-  // "lint-staged": {
-  //   "API.md": "node toc.js",
-  // },
   config: {
     commitizen: {
       path: "./node_modules/cz-customizable",
