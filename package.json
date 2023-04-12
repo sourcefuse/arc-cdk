@@ -73,8 +73,11 @@
     "constructs": "^10.1.232"
   },
   "keywords": [
+    "arc",
+    "aws",
     "cdk",
-    "cdktf"
+    "cdktf",
+    "lambda"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",

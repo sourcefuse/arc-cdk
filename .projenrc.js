@@ -21,6 +21,8 @@ const project = new cdktf.ConstructLibraryCdktf({
     "cz-conventional-changelog@^3.3.0",
     "cz-customizable@^7.0.0",
   ],
+  keywords: ["arc", "aws", "lambda"],
+  dependabot: true,
 });
 project.setScript("prepare", "husky install");
 project.setScript("toc", "node toc.js");
