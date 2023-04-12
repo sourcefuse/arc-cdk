@@ -21,15 +21,10 @@ const project = new cdktf.ConstructLibraryCdktf({
     "cz-conventional-changelog@^3.3.0",
     "cz-customizable@^7.0.0",
   ],
-  postBuildSteps: [
-    {
-      name: "toc",
-      run: "node toc.js",
-    },
-  ],
 });
 project.setScript("prepare", "husky install");
-project.setScript("postbuild", "node toc.js");
+project.setScript("toc", "node toc.js");
+project.setScript("postbuild", "npm run toc");
 project.addFields({
   config: {
     commitizen: {
@@ -40,4 +35,5 @@ project.addFields({
     },
   },
 });
+project.postCompileTask.exec("npm run toc");
 project.synth();
