@@ -26,7 +26,8 @@
     "watch": "npx projen watch",
     "projen": "npx projen",
     "prepare": "husky install",
-    "postbuild": "node toc.js"
+    "toc": "node toc.js",
+    "postbuild": "npm run toc"
   },
   "author": {
     "name": "saurabh",
