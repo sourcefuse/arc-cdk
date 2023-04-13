@@ -3,16 +3,7 @@ import { IBase } from "../../utils/interfaces";
 
 /** @internal */
 interface LambdaConfig
-  extends Omit<
-    LambdaFunctionConfig,
-    | "environment"
-    | "role"
-    | "functionName"
-    | "layers"
-    | "filename"
-    | "packageType"
-    | "imageUri"
-  > {}
+  extends Omit<LambdaFunctionConfig, "environment" | "role" | "functionName"> {}
 
 export interface ICreateRole {
   iamRole: string;
@@ -28,5 +19,4 @@ export interface ILambda extends IBase, LambdaConfig {
     [x: string]: string;
   };
   invocationData?: string;
-  useImage?: boolean;
 }

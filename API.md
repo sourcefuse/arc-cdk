@@ -6,8 +6,6 @@
   * [Constructs](#constructs-a-nameconstructs-idconstructsa)
     + [ApiGatewayCustomDomainName](#apigatewaycustomdomainname-a-nameapigatewaycustomdomainname-idarc-cdkapigatewaycustomdomainnamea)
     + [CreateAcmCertificate](#createacmcertificate-a-namecreateacmcertificate-idarc-cdkcreateacmcertificatea)
-    + [CreateEcrImage](#createecrimage-a-namecreateecrimage-idarc-cdkcreateecrimagea)
-    + [CreateEcrRepository](#createecrrepository-a-namecreateecrrepository-idarc-cdkcreateecrrepositorya)
     + [CreateLambdaRole](#createlambdarole-a-namecreatelambdarole-idarc-cdkcreatelambdarolea)
     + [DbModule](#dbmodule-a-namedbmodule-idarc-cdkdbmodulea)
     + [ElastiCache](#elasticache-a-nameelasticache-idarc-cdkelasticachea)
@@ -22,8 +20,6 @@
   * [Protocols](#protocols-a-nameprotocols-idprotocolsa)
     + [IAcmCertificate](#iacmcertificate-a-nameiacmcertificate-idarc-cdkiacmcertificatea)
     + [IApiGatewayCustomDomainName](#iapigatewaycustomdomainname-a-nameiapigatewaycustomdomainname-idarc-cdkiapigatewaycustomdomainnamea)
-    + [ICreateEcrImage](#icreateecrimage-a-nameicreateecrimage-idarc-cdkicreateecrimagea)
-    + [ICreateEcrRepository](#icreateecrrepository-a-nameicreateecrrepository-idarc-cdkicreateecrrepositorya)
     + [ICreateLambdaRole](#icreatelambdarole-a-nameicreatelambdarole-idarc-cdkicreatelambdarolea)
     + [ICreateRole](#icreaterole-a-nameicreaterole-idarc-cdkicreaterolea)
     + [ICustomDomainName](#icustomdomainname-a-nameicustomdomainname-idarc-cdkicustomdomainnamea)
@@ -272,254 +268,6 @@ public readonly acmArn: string;
 ```
 
 - *Type:* string
-
----
-
-
-### CreateEcrImage <a name="CreateEcrImage" id="arc-cdk.CreateEcrImage"></a>
-
-#### Initializers <a name="Initializers" id="arc-cdk.CreateEcrImage.Initializer"></a>
-
-```typescript
-import { CreateEcrImage } from 'arc-cdk'
-
-new CreateEcrImage(scope: Construct, id: string, config: ICreateEcrImage)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.CreateEcrImage.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.CreateEcrImage.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.CreateEcrImage.Initializer.parameter.config"></a>
-
-- *Type:* <a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#arc-cdk.CreateEcrImage.toString">toString</a></code> | Returns a string representation of this construct. |
-
----
-
-##### `toString` <a name="toString" id="arc-cdk.CreateEcrImage.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#arc-cdk.CreateEcrImage.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### `isConstruct` <a name="isConstruct" id="arc-cdk.CreateEcrImage.isConstruct"></a>
-
-```typescript
-import { CreateEcrImage } from 'arc-cdk'
-
-CreateEcrImage.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-Use this method instead of `instanceof` to properly detect `Construct`
-instances, even when the construct library is symlinked.
-
-Explanation: in JavaScript, multiple copies of the `constructs` library on
-disk are seen as independent, completely different libraries. As a
-consequence, the class `Construct` in each copy of the `constructs` library
-is seen as a different class, and an instance of one class will not test as
-`instanceof` the other class. `npm install` will not create installations
-like this, but users may manually symlink construct libraries together or
-use a monorepo tool: in those cases, multiple copies of the `constructs`
-library can be accidentally installed, and `instanceof` will behave
-unpredictably. It is safest to avoid using `instanceof`, and using
-this type-testing method instead.
-
-###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.CreateEcrImage.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#arc-cdk.CreateEcrImage.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.CreateEcrImage.property.ecrImage">ecrImage</a></code> | <code>@cdktf/provider-docker.registryImage.RegistryImage</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.CreateEcrImage.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `ecrImage`<sup>Required</sup> <a name="ecrImage" id="arc-cdk.CreateEcrImage.property.ecrImage"></a>
-
-```typescript
-public readonly ecrImage: RegistryImage;
-```
-
-- *Type:* @cdktf/provider-docker.registryImage.RegistryImage
-
----
-
-
-### CreateEcrRepository <a name="CreateEcrRepository" id="arc-cdk.CreateEcrRepository"></a>
-
-#### Initializers <a name="Initializers" id="arc-cdk.CreateEcrRepository.Initializer"></a>
-
-```typescript
-import { CreateEcrRepository } from 'arc-cdk'
-
-new CreateEcrRepository(scope: Construct, id: string, config: ICreateEcrRepository)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateEcrRepository">ICreateEcrRepository</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.CreateEcrRepository.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.CreateEcrRepository.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.CreateEcrRepository.Initializer.parameter.config"></a>
-
-- *Type:* <a href="#arc-cdk.ICreateEcrRepository">ICreateEcrRepository</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#arc-cdk.CreateEcrRepository.toString">toString</a></code> | Returns a string representation of this construct. |
-
----
-
-##### `toString` <a name="toString" id="arc-cdk.CreateEcrRepository.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#arc-cdk.CreateEcrRepository.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### `isConstruct` <a name="isConstruct" id="arc-cdk.CreateEcrRepository.isConstruct"></a>
-
-```typescript
-import { CreateEcrRepository } from 'arc-cdk'
-
-CreateEcrRepository.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-Use this method instead of `instanceof` to properly detect `Construct`
-instances, even when the construct library is symlinked.
-
-Explanation: in JavaScript, multiple copies of the `constructs` library on
-disk are seen as independent, completely different libraries. As a
-consequence, the class `Construct` in each copy of the `constructs` library
-is seen as a different class, and an instance of one class will not test as
-`instanceof` the other class. `npm install` will not create installations
-like this, but users may manually symlink construct libraries together or
-use a monorepo tool: in those cases, multiple copies of the `constructs`
-library can be accidentally installed, and `instanceof` will behave
-unpredictably. It is safest to avoid using `instanceof`, and using
-this type-testing method instead.
-
-###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.CreateEcrRepository.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#arc-cdk.CreateEcrRepository.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.CreateEcrRepository.property.ecrRepository">ecrRepository</a></code> | <code>@cdktf/provider-aws.ecrRepository.EcrRepository</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.CreateEcrRepository.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `ecrRepository`<sup>Required</sup> <a name="ecrRepository" id="arc-cdk.CreateEcrRepository.property.ecrRepository"></a>
-
-```typescript
-public readonly ecrRepository: EcrRepository;
-```
-
-- *Type:* @cdktf/provider-aws.ecrRepository.EcrRepository
 
 ---
 
@@ -4139,7 +3887,7 @@ public readonly additionalTagMap: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
-- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
+- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
 
 Additional key-value pairs to add to each map in `tags_as_list_of_maps`.
 
@@ -5180,7 +4928,7 @@ public readonly tags: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
-- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
+- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
 
 Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`). Neither the tag keys nor the tag values will be modified by this module.
 
@@ -5372,7 +5120,7 @@ public readonly additionalTagMap: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
-- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
+- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
 
 Additional key-value pairs to add to each map in `tags_as_list_of_maps`.
 
@@ -5989,7 +5737,7 @@ public readonly logDeliveryConfiguration: {[ key: string ]: any}[];
 ```
 
 - *Type:* {[ key: string ]: any}[]
-- *Default:* The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
+- *Default:* The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
 
 The log_delivery_configuration block allows the streaming of Redis SLOWLOG or Redis Engine Log to CloudWatch Logs or Kinesis Data Firehose.
 
@@ -6310,7 +6058,7 @@ public readonly tags: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
-- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
+- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
 
 Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`). Neither the tag keys nor the tag values will be modified by this module.
 
@@ -6505,118 +6253,6 @@ public readonly apiStage: string;
 
 ---
 
-### ICreateEcrImage <a name="ICreateEcrImage" id="arc-cdk.ICreateEcrImage"></a>
-
-- *Implemented By:* <a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a>
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `codePath`<sup>Required</sup> <a name="codePath" id="arc-cdk.ICreateEcrImage.property.codePath"></a>
-
-```typescript
-public readonly codePath: string;
-```
-
-- *Type:* string
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ICreateEcrImage.property.environment"></a>
-
-```typescript
-public readonly environment: string;
-```
-
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.ICreateEcrImage.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICreateEcrImage.property.namespace"></a>
-
-```typescript
-public readonly namespace: string;
-```
-
-- *Type:* string
-
----
-
-##### `repositoryUrl`<sup>Required</sup> <a name="repositoryUrl" id="arc-cdk.ICreateEcrImage.property.repositoryUrl"></a>
-
-```typescript
-public readonly repositoryUrl: string;
-```
-
-- *Type:* string
-
----
-
-### ICreateEcrRepository <a name="ICreateEcrRepository" id="arc-cdk.ICreateEcrRepository"></a>
-
-- *Implemented By:* <a href="#arc-cdk.ICreateEcrRepository">ICreateEcrRepository</a>
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#arc-cdk.ICreateEcrRepository.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrRepository.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrRepository.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ICreateEcrRepository.property.environment"></a>
-
-```typescript
-public readonly environment: string;
-```
-
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.ICreateEcrRepository.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICreateEcrRepository.property.namespace"></a>
-
-```typescript
-public readonly namespace: string;
-```
-
-- *Type:* string
-
----
-
 ### ICreateLambdaRole <a name="ICreateLambdaRole" id="arc-cdk.ICreateLambdaRole"></a>
 
 - *Implemented By:* <a href="#arc-cdk.ICreateLambdaRole">ICreateLambdaRole</a>
@@ -6782,7 +6418,6 @@ public readonly acmCertificateArn: string;
 | <code><a href="#arc-cdk.ILambda.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambda.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambda.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambda.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
@@ -6888,16 +6523,6 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r
 
 ---
 
-##### `useImage`<sup>Optional</sup> <a name="useImage" id="arc-cdk.ILambda.property.useImage"></a>
-
-```typescript
-public readonly useImage: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ### ILambdaWithApiGateway <a name="ILambdaWithApiGateway" id="arc-cdk.ILambdaWithApiGateway"></a>
 
 - *Extends:* <a href="#arc-cdk.ILambda">ILambda</a>
@@ -6919,7 +6544,6 @@ public readonly useImage: boolean;
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.customDomainName">customDomainName</a></code> | <code><a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a></code> | *No description.* |
 
 ---
@@ -7026,16 +6650,6 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r
 
 ---
 
-##### `useImage`<sup>Optional</sup> <a name="useImage" id="arc-cdk.ILambdaWithApiGateway.property.useImage"></a>
-
-```typescript
-public readonly useImage: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `customDomainName`<sup>Optional</sup> <a name="customDomainName" id="arc-cdk.ILambdaWithApiGateway.property.customDomainName"></a>
 
 ```typescript
@@ -7067,7 +6681,6 @@ public readonly customDomainName: ICustomDomainName;
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.scheduleExpression">scheduleExpression</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -7174,16 +6787,6 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r
 
 ---
 
-##### `useImage`<sup>Optional</sup> <a name="useImage" id="arc-cdk.ILambdaWithCloudWatchEvent.property.useImage"></a>
-
-```typescript
-public readonly useImage: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `scheduleExpression`<sup>Required</sup> <a name="scheduleExpression" id="arc-cdk.ILambdaWithCloudWatchEvent.property.scheduleExpression"></a>
 
 ```typescript
@@ -7215,7 +6818,6 @@ public readonly scheduleExpression: string;
 | <code><a href="#arc-cdk.ILambdaWithSns.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.kmsMasterKeyId">kmsMasterKeyId</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -7322,16 +6924,6 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r
 
 ---
 
-##### `useImage`<sup>Optional</sup> <a name="useImage" id="arc-cdk.ILambdaWithSns.property.useImage"></a>
-
-```typescript
-public readonly useImage: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `kmsMasterKeyId`<sup>Required</sup> <a name="kmsMasterKeyId" id="arc-cdk.ILambdaWithSns.property.kmsMasterKeyId"></a>
 
 ```typescript
@@ -7363,7 +6955,6 @@ public readonly kmsMasterKeyId: string;
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.batchSize">batchSize</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.delaySeconds">delaySeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.kmsDataKeyReusePeriodSeconds">kmsDataKeyReusePeriodSeconds</a></code> | <code>number</code> | *No description.* |
@@ -7474,16 +7065,6 @@ public readonly s3Bucket: string;
 - *Type:* string
 
 Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
-
----
-
-##### `useImage`<sup>Optional</sup> <a name="useImage" id="arc-cdk.ILambdaWithSqs.property.useImage"></a>
-
-```typescript
-public readonly useImage: boolean;
-```
-
-- *Type:* boolean
 
 ---
 

@@ -1,15 +1,10 @@
 import * as aws from "@cdktf/provider-aws";
-import {
-  LambdaFunction,
-  LambdaFunctionConfig,
-} from "@cdktf/provider-aws/lib/lambda-function";
+import { LambdaFunction } from "@cdktf/provider-aws/lib/lambda-function";
 import { AssetType, TerraformAsset } from "cdktf";
 import { Construct } from "constructs";
 import { ILambda } from "./interface";
 import { iamLambdaPolicy, iamLambdaRole } from "../../constants";
 import { getResourceName } from "../../utils/helper";
-import { CreateEcrImage } from "../createEcrImage";
-import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
 
 export class Lambda extends Construct {
@@ -31,7 +26,6 @@ export class Lambda extends Construct {
       invocationData,
       createRole,
       s3Bucket,
-      useImage,
       ...restConfig
     } = config;
 
@@ -40,6 +34,51 @@ export class Lambda extends Construct {
       environment,
       name,
     });
+
+    // Creating Archive of Lambda
+    const asset = new TerraformAsset(this, "lambda-asset", {
+      path: codePath,
+      type: AssetType.ARCHIVE, // if left empty it infers directory and file
+    });
+
+    const layers: string[] = [];
+    if (layerPath) {
+      // Creating Archive of Lambda Layer
+      const layerAsset = new TerraformAsset(this, "lambda-layer-asset", {
+        path: layerPath,
+        type: AssetType.ARCHIVE, // if left empty it infers directory and file
+      });
+
+      let lambdaLayers: aws.lambdaLayerVersion.LambdaLayerVersion;
+
+      if (s3Bucket) {
+        const s3Object = new aws.s3Object.S3Object(this, "s3", {
+          bucket: s3Bucket,
+          key: resourceName,
+          source: layerAsset.path,
+        });
+        lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
+          this,
+          "lambda-layer",
+          {
+            s3Bucket: s3Bucket,
+            s3Key: s3Object.key,
+            layerName: "resourceName",
+          }
+        );
+      } else {
+        // Create Lambda Layer for function
+        lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
+          this,
+          "lambda-layer",
+          {
+            filename: layerAsset.path,
+            layerName: resourceName,
+          }
+        );
+      }
+      layers.push(lambdaLayers.arn);
+    }
 
     if (!roleArn) {
       createRole = {
@@ -56,91 +95,17 @@ export class Lambda extends Construct {
       roleArn = role.arn;
     }
 
-    let lambdaConfig: LambdaFunctionConfig = {
-      functionName: resourceName,
-      role: roleArn,
-    };
-
-    if (useImage) {
-      const repo = new CreateEcrRepository(this, "lambda-repo", {
-        namespace,
-        environment,
-        name,
-      });
-
-      const image = new CreateEcrImage(this, "lambda-image", {
-        namespace,
-        environment,
-        name,
-        codePath,
-        repositoryUrl: repo.ecrRepository.repositoryUrl,
-      });
-
-      lambdaConfig = {
-        ...lambdaConfig,
-        imageUri: image.ecrImage.name,
-        packageType: "Image",
-        ...restConfig,
-      };
-    } else {
-      // Creating Archive of Lambda
-      const asset = new TerraformAsset(this, "lambda-asset", {
-        path: codePath,
-        type: AssetType.ARCHIVE, // if left empty it infers directory and file
-      });
-
-      const layers: string[] = [];
-      if (layerPath) {
-        // Creating Archive of Lambda Layer
-        const layerAsset = new TerraformAsset(this, "lambda-layer-asset", {
-          path: layerPath,
-          type: AssetType.ARCHIVE, // if left empty it infers directory and file
-        });
-
-        let lambdaLayers: aws.lambdaLayerVersion.LambdaLayerVersion;
-
-        if (s3Bucket) {
-          const s3Object = new aws.s3Object.S3Object(this, "s3", {
-            bucket: s3Bucket,
-            key: resourceName,
-            source: layerAsset.path,
-          });
-          lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
-            this,
-            "lambda-layer",
-            {
-              s3Bucket: s3Bucket,
-              s3Key: s3Object.key,
-              layerName: "resourceName",
-            }
-          );
-        } else {
-          // Create Lambda Layer for function
-          lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
-            this,
-            "lambda-layer",
-            {
-              filename: layerAsset.path,
-              layerName: resourceName,
-            }
-          );
-        }
-        layers.push(lambdaLayers.arn);
-      }
-
-      lambdaConfig = {
-        ...lambdaConfig,
-        layers,
-        filename: asset.path,
-        ...restConfig,
-      };
-    }
-
     // Create Lambda function
     this.lambdaFunc = new aws.lambdaFunction.LambdaFunction(
       this,
       "lambda-function",
-      lambdaConfig
+      {
+        functionName: resourceName,
+        filename: asset.path,
+        role: roleArn,
+        layers,
+        ...restConfig,
+      }
     );
 
     if (invocationData) {
