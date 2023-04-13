@@ -1,6 +1,6 @@
 const { cdktf } = require("projen");
 const project = new cdktf.ConstructLibraryCdktf({
-  author: "saurabh",
+  author: "saurabh jindal",
   authorAddress: "saurabh.jindal@sourcefuse.com",
   cdktfVersion: "^0.15.3",
   constructsVersion: "^10.1.232",
@@ -9,8 +9,7 @@ const project = new cdktf.ConstructLibraryCdktf({
   repositoryUrl: "https://github.com/sourcefuse/arc-cdk",
   prettier: true,
   releaseToNpm: true,
-  stability: "experimental",
-  peerDeps: ["@cdktf/provider-aws@^12.0.4"],
+  peerDeps: ["@cdktf/provider-aws@^12.0.4", "@cdktf/provider-docker@^6.0.1"],
   depsUpgrade: false,
   devDeps: [
     "markdown-toc@^1.2.0",
@@ -26,7 +25,6 @@ const project = new cdktf.ConstructLibraryCdktf({
 });
 project.setScript("prepare", "husky install");
 project.setScript("toc", "node toc.js");
-project.setScript("postbuild", "npm run toc");
 project.addFields({
   config: {
     commitizen: {
