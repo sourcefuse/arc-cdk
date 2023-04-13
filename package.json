@@ -26,16 +26,16 @@
     "watch": "npx projen watch",
     "projen": "npx projen",
     "prepare": "husky install",
-    "toc": "node toc.js",
-    "postbuild": "npm run toc"
+    "toc": "node toc.js"
   },
   "author": {
-    "name": "saurabh",
+    "name": "saurabh jindal",
     "email": "saurabh.jindal@sourcefuse.com",
     "organization": false
   },
   "devDependencies": {
     "@cdktf/provider-aws": "12.0.4",
+    "@cdktf/provider-docker": "6.0.1",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@types/jest": "^27",
@@ -69,6 +69,7 @@
   },
   "peerDependencies": {
     "@cdktf/provider-aws": "^12.0.4",
+    "@cdktf/provider-docker": "^6.0.1",
     "cdktf": "^0.15.3",
     "constructs": "^10.1.232"
   },
@@ -123,7 +124,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "experimental",
+  "stability": "stable",
   "jsii": {
     "outdir": "dist",
     "targets": {},

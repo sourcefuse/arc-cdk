@@ -6,6 +6,11 @@
       "type": "build"
     },
     {
+      "name": "@cdktf/provider-docker",
+      "version": "6.0.1",
+      "type": "build"
+    },
+    {
       "name": "@commitlint/cli",
       "version": "^17.4.4",
       "type": "build"
@@ -156,6 +161,11 @@
     {
       "name": "@cdktf/provider-aws",
       "version": "^12.0.4",
+      "type": "peer"
+    },
+    {
+      "name": "@cdktf/provider-docker",
+      "version": "^6.0.1",
       "type": "peer"
     },
     {
