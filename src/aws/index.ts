@@ -1,5 +1,7 @@
 export * from "./apiGatewayCustomDomainName";
 export * from "./createAcmCertificate";
+export * from "./createEcrImage";
+export * from "./createEcrRepository";
 export * from "./createLambdaRole";
 export * from "./dbModule";
 export * from "./elastiCache";
