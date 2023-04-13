@@ -5,12 +5,12 @@ import {
 } from "@cdktf/provider-aws/lib/lambda-function";
 import { AssetType, TerraformAsset } from "cdktf";
 import { Construct } from "constructs";
+import { ILambda } from "./interface";
 import { iamLambdaPolicy, iamLambdaRole } from "../../constants";
 import { getResourceName } from "../../utils/helper";
 import { CreateEcrImage } from "../createEcrImage";
 import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
-import { ILambda } from "./interface";
 
 export class Lambda extends Construct {
   arn: string;
