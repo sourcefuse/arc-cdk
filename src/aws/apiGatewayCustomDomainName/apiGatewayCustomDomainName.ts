@@ -2,7 +2,16 @@ import * as aws from "@cdktf/provider-aws";
 import { Construct } from "constructs";
 import { IApiGatewayCustomDomainName } from "./interface";
 
+/**
+ * Represents a custom domain name for an API Gateway.
+ */
 export class ApiGatewayCustomDomainName extends Construct {
+  /**
+   * Creates a new `ApiGatewayCustomDomainName`.
+   * @param scope  The parent construct.
+   * @param id  The ID of the construct.
+   * @param config  The configuration for the custom domain name.
+   */
   constructor(
     scope: Construct,
     id: string,

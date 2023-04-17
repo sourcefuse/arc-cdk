@@ -2,8 +2,20 @@ import * as aws from "@cdktf/provider-aws";
 import { Construct } from "constructs";
 import { IAcmCertificate } from "./interface";
 
+/**
+ * Creates an ACM Certificate with the specified domain name and hosted zone ID.
+ */
 export class CreateAcmCertificate extends Construct {
+  /**
+   * The ARN of the created ACM certificate.
+   */
   acmArn: string;
+
+  /**
+   * @param scope The parent construct of this stack.
+   * @param id The ID of the construct.
+   * @param config The configuration of the ACM Certificate.
+   */
   constructor(scope: Construct, id: string, config: IAcmCertificate) {
     super(scope, id);
 

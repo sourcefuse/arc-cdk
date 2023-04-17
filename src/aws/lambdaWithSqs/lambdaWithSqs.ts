@@ -6,6 +6,11 @@ import { getResourceName } from "../../utils/helper";
 import { Lambda } from "../lambda";
 
 export class LambdaWithSqs extends Construct {
+  /**
+   * @param scope The parent construct of this stack.
+   * @param id The ID of the construct.
+   * @param config The configuration options for this resource.
+   */
   constructor(scope: Construct, id: string, config: ILambdaWithSqs) {
     super(scope, id);
 

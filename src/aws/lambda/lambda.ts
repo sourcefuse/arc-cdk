@@ -13,10 +13,26 @@ import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
 
 export class Lambda extends Construct {
+  /**
+   * The Amazon Resource Name (ARN) of the Lambda function.
+   */
   arn: string;
+
+  /**
+   * The name of the Lambda function.
+   */
   functionName: string;
+
+  /**
+   * The LambdaFunction construct representing the created Lambda function.
+   */
   lambdaFunc: LambdaFunction;
 
+  /**
+   * @param scope The parent construct of this stack.
+   * @param id The ID of the construct.
+   * @param config The configuration options for this resource.
+   */
   constructor(scope: Construct, id: string, config: ILambda) {
     super(scope, id);
 
