@@ -4,7 +4,16 @@ import { ICreateLambdaRole } from "./interface";
 import { getResourceName } from "../../utils/helper";
 
 export class CreateLambdaRole extends Construct {
+  /**
+   * The ARN of the created IAM role.
+   */
   arn: string;
+
+  /**
+   * @param scope The parent construct of this stack.
+   * @param id The ID of the construct.
+   * @param config The configuration options for this resource.
+   */
   constructor(scope: Construct, id: string, config: ICreateLambdaRole) {
     super(scope, id);
 

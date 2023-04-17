@@ -6,7 +6,15 @@ import { ICreateEcrImage } from "./interface";
 import { getResourceName } from "../../utils/helper";
 
 export class CreateEcrImage extends Construct {
+  /** The created ECR image. */
   ecrImage: RegistryImage;
+
+  /**
+   * Creates a new CreateEcrImage object.
+   * @param scope The parent Construct of this stack.
+   * @param id The ID of this construct.
+   * @param config The configuration options for creating the ECR image.
+   */
   constructor(scope: Construct, id: string, config: ICreateEcrImage) {
     super(scope, id);
 

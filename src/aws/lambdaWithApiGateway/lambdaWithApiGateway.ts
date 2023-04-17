@@ -7,7 +7,16 @@ import { CreateAcmCertificate } from "../createAcmCertificate";
 import { Lambda } from "../lambda";
 
 export class LambdaWithApiGateway extends Construct {
+  /**
+   * The HTTP URL of the API Gateway or the domain name if the custom domain name is provided.
+   */
   url: string;
+
+  /**
+   * @param scope The parent construct of this stack.
+   * @param id The ID of the construct.
+   * @param config The configuration options for this resource.
+   */
   constructor(scope: Construct, id: string, config: ILambdaWithApiGateway) {
     super(scope, id);
 

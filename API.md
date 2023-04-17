@@ -41,6 +41,8 @@
 
 ### ApiGatewayCustomDomainName <a name="ApiGatewayCustomDomainName" id="arc-cdk.ApiGatewayCustomDomainName"></a>
 
+Represents a custom domain name for an API Gateway.
+
 #### Initializers <a name="Initializers" id="arc-cdk.ApiGatewayCustomDomainName.Initializer"></a>
 
 ```typescript
@@ -51,9 +53,9 @@ new ApiGatewayCustomDomainName(scope: Construct, id: string, config: IApiGateway
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.IApiGatewayCustomDomainName">IApiGatewayCustomDomainName</a></code> | *No description.* |
+| <code><a href="#arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct. |
+| <code><a href="#arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.IApiGatewayCustomDomainName">IApiGatewayCustomDomainName</a></code> | The configuration for the custom domain name. |
 
 ---
 
@@ -61,17 +63,23 @@ new ApiGatewayCustomDomainName(scope: Construct, id: string, config: IApiGateway
 
 - *Type:* constructs.Construct
 
+The parent construct.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.ApiGatewayCustomDomainName.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.IApiGatewayCustomDomainName">IApiGatewayCustomDomainName</a>
+
+The configuration for the custom domain name.
 
 ---
 
@@ -154,6 +162,8 @@ The tree node.
 
 ### CreateAcmCertificate <a name="CreateAcmCertificate" id="arc-cdk.CreateAcmCertificate"></a>
 
+Creates an ACM Certificate with the specified domain name and hosted zone ID.
+
 #### Initializers <a name="Initializers" id="arc-cdk.CreateAcmCertificate.Initializer"></a>
 
 ```typescript
@@ -164,9 +174,9 @@ new CreateAcmCertificate(scope: Construct, id: string, config: IAcmCertificate)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.CreateAcmCertificate.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateAcmCertificate.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateAcmCertificate.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.IAcmCertificate">IAcmCertificate</a></code> | *No description.* |
+| <code><a href="#arc-cdk.CreateAcmCertificate.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.CreateAcmCertificate.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.CreateAcmCertificate.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.IAcmCertificate">IAcmCertificate</a></code> | The configuration of the ACM Certificate. |
 
 ---
 
@@ -174,17 +184,23 @@ new CreateAcmCertificate(scope: Construct, id: string, config: IAcmCertificate)
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.CreateAcmCertificate.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.CreateAcmCertificate.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.IAcmCertificate">IAcmCertificate</a>
+
+The configuration of the ACM Certificate.
 
 ---
 
@@ -249,7 +265,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.CreateAcmCertificate.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.CreateAcmCertificate.property.acmArn">acmArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.CreateAcmCertificate.property.acmArn">acmArn</a></code> | <code>string</code> | The ARN of the created ACM certificate. |
 
 ---
 
@@ -273,6 +289,8 @@ public readonly acmArn: string;
 
 - *Type:* string
 
+The ARN of the created ACM certificate.
+
 ---
 
 
@@ -288,9 +306,9 @@ new CreateEcrImage(scope: Construct, id: string, config: ICreateEcrImage)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a></code> | *No description.* |
+| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent Construct of this stack. |
+| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of this construct. |
+| <code><a href="#arc-cdk.CreateEcrImage.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a></code> | The configuration options for creating the ECR image. |
 
 ---
 
@@ -298,17 +316,23 @@ new CreateEcrImage(scope: Construct, id: string, config: ICreateEcrImage)
 
 - *Type:* constructs.Construct
 
+The parent Construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.CreateEcrImage.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of this construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.CreateEcrImage.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a>
+
+The configuration options for creating the ECR image.
 
 ---
 
@@ -373,7 +397,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.CreateEcrImage.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.CreateEcrImage.property.ecrImage">ecrImage</a></code> | <code>@cdktf/provider-docker.registryImage.RegistryImage</code> | *No description.* |
+| <code><a href="#arc-cdk.CreateEcrImage.property.ecrImage">ecrImage</a></code> | <code>@cdktf/provider-docker.registryImage.RegistryImage</code> | The created ECR image. |
 
 ---
 
@@ -397,6 +421,8 @@ public readonly ecrImage: RegistryImage;
 
 - *Type:* @cdktf/provider-docker.registryImage.RegistryImage
 
+The created ECR image.
+
 ---
 
 
@@ -412,9 +438,9 @@ new CreateEcrRepository(scope: Construct, id: string, config: ICreateEcrReposito
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateEcrRepository">ICreateEcrRepository</a></code> | *No description.* |
+| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.CreateEcrRepository.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateEcrRepository">ICreateEcrRepository</a></code> | The configuration options for creating the Amazon ECR repository. |
 
 ---
 
@@ -422,17 +448,23 @@ new CreateEcrRepository(scope: Construct, id: string, config: ICreateEcrReposito
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.CreateEcrRepository.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.CreateEcrRepository.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ICreateEcrRepository">ICreateEcrRepository</a>
+
+The configuration options for creating the Amazon ECR repository.
 
 ---
 
@@ -497,7 +529,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.CreateEcrRepository.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.CreateEcrRepository.property.ecrRepository">ecrRepository</a></code> | <code>@cdktf/provider-aws.ecrRepository.EcrRepository</code> | *No description.* |
+| <code><a href="#arc-cdk.CreateEcrRepository.property.ecrRepository">ecrRepository</a></code> | <code>@cdktf/provider-aws.ecrRepository.EcrRepository</code> | The created Amazon ECR repository. |
 
 ---
 
@@ -521,6 +553,8 @@ public readonly ecrRepository: EcrRepository;
 
 - *Type:* @cdktf/provider-aws.ecrRepository.EcrRepository
 
+The created Amazon ECR repository.
+
 ---
 
 
@@ -536,9 +570,9 @@ new CreateLambdaRole(scope: Construct, id: string, config: ICreateLambdaRole)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.CreateLambdaRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateLambdaRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.CreateLambdaRole.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateLambdaRole">ICreateLambdaRole</a></code> | *No description.* |
+| <code><a href="#arc-cdk.CreateLambdaRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.CreateLambdaRole.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.CreateLambdaRole.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ICreateLambdaRole">ICreateLambdaRole</a></code> | The configuration options for this resource. |
 
 ---
 
@@ -546,17 +580,23 @@ new CreateLambdaRole(scope: Construct, id: string, config: ICreateLambdaRole)
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.CreateLambdaRole.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.CreateLambdaRole.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ICreateLambdaRole">ICreateLambdaRole</a>
+
+The configuration options for this resource.
 
 ---
 
@@ -621,7 +661,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.CreateLambdaRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.CreateLambdaRole.property.arn">arn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.CreateLambdaRole.property.arn">arn</a></code> | <code>string</code> | The ARN of the created IAM role. |
 
 ---
 
@@ -644,6 +684,8 @@ public readonly arn: string;
 ```
 
 - *Type:* string
+
+The ARN of the created IAM role.
 
 ---
 
@@ -3323,9 +3365,9 @@ new Lambda(scope: Construct, id: string, config: ILambda)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.Lambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.Lambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.Lambda.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambda">ILambda</a></code> | *No description.* |
+| <code><a href="#arc-cdk.Lambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.Lambda.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.Lambda.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambda">ILambda</a></code> | The configuration options for this resource. |
 
 ---
 
@@ -3333,17 +3375,23 @@ new Lambda(scope: Construct, id: string, config: ILambda)
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.Lambda.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.Lambda.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ILambda">ILambda</a>
+
+The configuration options for this resource.
 
 ---
 
@@ -3408,9 +3456,9 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.Lambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.Lambda.property.arn">arn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.Lambda.property.functionName">functionName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.Lambda.property.lambdaFunc">lambdaFunc</a></code> | <code>@cdktf/provider-aws.lambdaFunction.LambdaFunction</code> | *No description.* |
+| <code><a href="#arc-cdk.Lambda.property.arn">arn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the Lambda function. |
+| <code><a href="#arc-cdk.Lambda.property.functionName">functionName</a></code> | <code>string</code> | The name of the Lambda function. |
+| <code><a href="#arc-cdk.Lambda.property.lambdaFunc">lambdaFunc</a></code> | <code>@cdktf/provider-aws.lambdaFunction.LambdaFunction</code> | The LambdaFunction construct representing the created Lambda function. |
 
 ---
 
@@ -3434,6 +3482,8 @@ public readonly arn: string;
 
 - *Type:* string
 
+The Amazon Resource Name (ARN) of the Lambda function.
+
 ---
 
 ##### `functionName`<sup>Required</sup> <a name="functionName" id="arc-cdk.Lambda.property.functionName"></a>
@@ -3444,6 +3494,8 @@ public readonly functionName: string;
 
 - *Type:* string
 
+The name of the Lambda function.
+
 ---
 
 ##### `lambdaFunc`<sup>Required</sup> <a name="lambdaFunc" id="arc-cdk.Lambda.property.lambdaFunc"></a>
@@ -3453,6 +3505,8 @@ public readonly lambdaFunc: LambdaFunction;
 ```
 
 - *Type:* @cdktf/provider-aws.lambdaFunction.LambdaFunction
+
+The LambdaFunction construct representing the created Lambda function.
 
 ---
 
@@ -3469,9 +3523,9 @@ new LambdaWithApiGateway(scope: Construct, id: string, config: ILambdaWithApiGat
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.LambdaWithApiGateway.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithApiGateway.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithApiGateway.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithApiGateway">ILambdaWithApiGateway</a></code> | *No description.* |
+| <code><a href="#arc-cdk.LambdaWithApiGateway.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.LambdaWithApiGateway.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.LambdaWithApiGateway.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithApiGateway">ILambdaWithApiGateway</a></code> | The configuration options for this resource. |
 
 ---
 
@@ -3479,17 +3533,23 @@ new LambdaWithApiGateway(scope: Construct, id: string, config: ILambdaWithApiGat
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.LambdaWithApiGateway.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.LambdaWithApiGateway.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ILambdaWithApiGateway">ILambdaWithApiGateway</a>
+
+The configuration options for this resource.
 
 ---
 
@@ -3554,7 +3614,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.LambdaWithApiGateway.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#arc-cdk.LambdaWithApiGateway.property.url">url</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.LambdaWithApiGateway.property.url">url</a></code> | <code>string</code> | The HTTP URL of the API Gateway or the domain name if the custom domain name is provided. |
 
 ---
 
@@ -3578,6 +3638,8 @@ public readonly url: string;
 
 - *Type:* string
 
+The HTTP URL of the API Gateway or the domain name if the custom domain name is provided.
+
 ---
 
 
@@ -3593,9 +3655,9 @@ new LambdaWithCloudWatchEvent(scope: Construct, id: string, config: ILambdaWithC
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent">ILambdaWithCloudWatchEvent</a></code> | *No description.* |
+| <code><a href="#arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent">ILambdaWithCloudWatchEvent</a></code> | The configuration options for this resource. |
 
 ---
 
@@ -3603,17 +3665,23 @@ new LambdaWithCloudWatchEvent(scope: Construct, id: string, config: ILambdaWithC
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.LambdaWithCloudWatchEvent.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ILambdaWithCloudWatchEvent">ILambdaWithCloudWatchEvent</a>
+
+The configuration options for this resource.
 
 ---
 
@@ -3706,9 +3774,9 @@ new LambdaWithSns(scope: Construct, id: string, config: ILambdaWithSns)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.LambdaWithSns.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithSns.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithSns.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithSns">ILambdaWithSns</a></code> | *No description.* |
+| <code><a href="#arc-cdk.LambdaWithSns.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.LambdaWithSns.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.LambdaWithSns.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithSns">ILambdaWithSns</a></code> | The configuration options for this resource. |
 
 ---
 
@@ -3716,17 +3784,23 @@ new LambdaWithSns(scope: Construct, id: string, config: ILambdaWithSns)
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.LambdaWithSns.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.LambdaWithSns.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ILambdaWithSns">ILambdaWithSns</a>
+
+The configuration options for this resource.
 
 ---
 
@@ -3819,9 +3893,9 @@ new LambdaWithSqs(scope: Construct, id: string, config: ILambdaWithSqs)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.LambdaWithSqs.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithSqs.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.LambdaWithSqs.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithSqs">ILambdaWithSqs</a></code> | *No description.* |
+| <code><a href="#arc-cdk.LambdaWithSqs.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The parent construct of this stack. |
+| <code><a href="#arc-cdk.LambdaWithSqs.Initializer.parameter.id">id</a></code> | <code>string</code> | The ID of the construct. |
+| <code><a href="#arc-cdk.LambdaWithSqs.Initializer.parameter.config">config</a></code> | <code><a href="#arc-cdk.ILambdaWithSqs">ILambdaWithSqs</a></code> | The configuration options for this resource. |
 
 ---
 
@@ -3829,17 +3903,23 @@ new LambdaWithSqs(scope: Construct, id: string, config: ILambdaWithSqs)
 
 - *Type:* constructs.Construct
 
+The parent construct of this stack.
+
 ---
 
 ##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.LambdaWithSqs.Initializer.parameter.id"></a>
 
 - *Type:* string
 
+The ID of the construct.
+
 ---
 
 ##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.LambdaWithSqs.Initializer.parameter.config"></a>
 
 - *Type:* <a href="#arc-cdk.ILambdaWithSqs">ILambdaWithSqs</a>
+
+The configuration options for this resource.
 
 ---
 
@@ -6402,9 +6482,9 @@ Can also be a plain string, but that use is DEPRECATED because of Terraform issu
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.IAcmCertificate.property.domainName">domainName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.IAcmCertificate.property.hostedZoneId">hostedZoneId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.IAcmCertificate.property.ttl">ttl</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#arc-cdk.IAcmCertificate.property.domainName">domainName</a></code> | <code>string</code> | The domain name associated with the certificate. |
+| <code><a href="#arc-cdk.IAcmCertificate.property.hostedZoneId">hostedZoneId</a></code> | <code>string</code> | The ID of the hosted zone associated with the domain name. |
+| <code><a href="#arc-cdk.IAcmCertificate.property.ttl">ttl</a></code> | <code>number</code> | The time to live (TTL) of the DNS record created for the validation of the certificate. |
 
 ---
 
@@ -6416,6 +6496,8 @@ public readonly domainName: string;
 
 - *Type:* string
 
+The domain name associated with the certificate.
+
 ---
 
 ##### `hostedZoneId`<sup>Required</sup> <a name="hostedZoneId" id="arc-cdk.IAcmCertificate.property.hostedZoneId"></a>
@@ -6426,6 +6508,8 @@ public readonly hostedZoneId: string;
 
 - *Type:* string
 
+The ID of the hosted zone associated with the domain name.
+
 ---
 
 ##### `ttl`<sup>Optional</sup> <a name="ttl" id="arc-cdk.IAcmCertificate.property.ttl"></a>
@@ -6435,6 +6519,8 @@ public readonly ttl: number;
 ```
 
 - *Type:* number
+
+The time to live (TTL) of the DNS record created for the validation of the certificate.
 
 ---
 
@@ -6447,11 +6533,11 @@ public readonly ttl: number;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.acmCertificateArn">acmCertificateArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.apiId">apiId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.domainName">domainName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.hostedZoneId">hostedZoneId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.apiStage">apiStage</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.acmCertificateArn">acmCertificateArn</a></code> | <code>string</code> | The ARN of the ACM certificate for the custom domain. |
+| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.apiId">apiId</a></code> | <code>string</code> | The ID of the API Gateway API that is associated with the custom domain. |
+| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.domainName">domainName</a></code> | <code>string</code> | The domain name for the custom domain. |
+| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.hostedZoneId">hostedZoneId</a></code> | <code>string</code> | The ID of the Route 53 hosted zone that contains the domain record sets for the custom domain. |
+| <code><a href="#arc-cdk.IApiGatewayCustomDomainName.property.apiStage">apiStage</a></code> | <code>string</code> | The name of the deployment stage associated with the custom domain (if any). |
 
 ---
 
@@ -6463,6 +6549,8 @@ public readonly acmCertificateArn: string;
 
 - *Type:* string
 
+The ARN of the ACM certificate for the custom domain.
+
 ---
 
 ##### `apiId`<sup>Required</sup> <a name="apiId" id="arc-cdk.IApiGatewayCustomDomainName.property.apiId"></a>
@@ -6472,6 +6560,8 @@ public readonly apiId: string;
 ```
 
 - *Type:* string
+
+The ID of the API Gateway API that is associated with the custom domain.
 
 ---
 
@@ -6483,6 +6573,8 @@ public readonly domainName: string;
 
 - *Type:* string
 
+The domain name for the custom domain.
+
 ---
 
 ##### `hostedZoneId`<sup>Required</sup> <a name="hostedZoneId" id="arc-cdk.IApiGatewayCustomDomainName.property.hostedZoneId"></a>
@@ -6493,6 +6585,8 @@ public readonly hostedZoneId: string;
 
 - *Type:* string
 
+The ID of the Route 53 hosted zone that contains the domain record sets for the custom domain.
+
 ---
 
 ##### `apiStage`<sup>Optional</sup> <a name="apiStage" id="arc-cdk.IApiGatewayCustomDomainName.property.apiStage"></a>
@@ -6502,6 +6596,8 @@ public readonly apiStage: string;
 ```
 
 - *Type:* string
+
+The name of the deployment stage associated with the custom domain (if any).
 
 ---
 
@@ -6514,11 +6610,11 @@ public readonly apiStage: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ICreateEcrImage.property.codePath">codePath</a></code> | <code>string</code> | The path to the directory containing the Dockerfile and application code. |
+| <code><a href="#arc-cdk.ICreateEcrImage.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ICreateEcrImage.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ICreateEcrImage.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+| <code><a href="#arc-cdk.ICreateEcrImage.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | The URL of the ECR repository to which the image will be pushed. |
 
 ---
 
@@ -6530,6 +6626,8 @@ public readonly codePath: string;
 
 - *Type:* string
 
+The path to the directory containing the Dockerfile and application code.
+
 ---
 
 ##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ICreateEcrImage.property.environment"></a>
@@ -6539,6 +6637,8 @@ public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment of the resource.
 
 ---
 
@@ -6550,6 +6650,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICreateEcrImage.property.namespace"></a>
@@ -6560,6 +6662,8 @@ public readonly namespace: string;
 
 - *Type:* string
 
+The namespace of the resource.
+
 ---
 
 ##### `repositoryUrl`<sup>Required</sup> <a name="repositoryUrl" id="arc-cdk.ICreateEcrImage.property.repositoryUrl"></a>
@@ -6569,6 +6673,8 @@ public readonly repositoryUrl: string;
 ```
 
 - *Type:* string
+
+The URL of the ECR repository to which the image will be pushed.
 
 ---
 
@@ -6581,9 +6687,9 @@ public readonly repositoryUrl: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ICreateEcrRepository.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrRepository.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateEcrRepository.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ICreateEcrRepository.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ICreateEcrRepository.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ICreateEcrRepository.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
 
 ---
 
@@ -6595,6 +6701,8 @@ public readonly environment: string;
 
 - *Type:* string
 
+The environment of the resource.
+
 ---
 
 ##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.ICreateEcrRepository.property.name"></a>
@@ -6605,6 +6713,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICreateEcrRepository.property.namespace"></a>
@@ -6614,6 +6724,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -6626,11 +6738,11 @@ public readonly namespace: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ICreateLambdaRole.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateLambdaRole.property.iamPolicy">iamPolicy</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateLambdaRole.property.iamRole">iamRole</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateLambdaRole.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateLambdaRole.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ICreateLambdaRole.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ICreateLambdaRole.property.iamPolicy">iamPolicy</a></code> | <code>string</code> | The IAM Policy to be created. |
+| <code><a href="#arc-cdk.ICreateLambdaRole.property.iamRole">iamRole</a></code> | <code>string</code> | The IAM Role to be created. |
+| <code><a href="#arc-cdk.ICreateLambdaRole.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ICreateLambdaRole.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
 
 ---
 
@@ -6642,6 +6754,8 @@ public readonly environment: string;
 
 - *Type:* string
 
+The environment of the resource.
+
 ---
 
 ##### `iamPolicy`<sup>Required</sup> <a name="iamPolicy" id="arc-cdk.ICreateLambdaRole.property.iamPolicy"></a>
@@ -6651,6 +6765,8 @@ public readonly iamPolicy: string;
 ```
 
 - *Type:* string
+
+The IAM Policy to be created.
 
 ---
 
@@ -6662,6 +6778,8 @@ public readonly iamRole: string;
 
 - *Type:* string
 
+The IAM Role to be created.
+
 ---
 
 ##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.ICreateLambdaRole.property.name"></a>
@@ -6672,6 +6790,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICreateLambdaRole.property.namespace"></a>
@@ -6681,6 +6801,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -6693,8 +6815,8 @@ public readonly namespace: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ICreateRole.property.iamPolicy">iamPolicy</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICreateRole.property.iamRole">iamRole</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ICreateRole.property.iamPolicy">iamPolicy</a></code> | <code>string</code> | The IAM Policy to be created. |
+| <code><a href="#arc-cdk.ICreateRole.property.iamRole">iamRole</a></code> | <code>string</code> | The IAM Role to be created. |
 
 ---
 
@@ -6706,6 +6828,8 @@ public readonly iamPolicy: string;
 
 - *Type:* string
 
+The IAM Policy to be created.
+
 ---
 
 ##### `iamRole`<sup>Required</sup> <a name="iamRole" id="arc-cdk.ICreateRole.property.iamRole"></a>
@@ -6715,6 +6839,8 @@ public readonly iamRole: string;
 ```
 
 - *Type:* string
+
+The IAM Role to be created.
 
 ---
 
@@ -6727,9 +6853,9 @@ public readonly iamRole: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ICustomDomainName.property.domainName">domainName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICustomDomainName.property.hostedZoneId">hostedZoneId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ICustomDomainName.property.acmCertificateArn">acmCertificateArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ICustomDomainName.property.domainName">domainName</a></code> | <code>string</code> | The domain name to use for the custom domain. |
+| <code><a href="#arc-cdk.ICustomDomainName.property.hostedZoneId">hostedZoneId</a></code> | <code>string</code> | The ID of the Amazon Route 53 hosted zone associated with the domain. |
+| <code><a href="#arc-cdk.ICustomDomainName.property.acmCertificateArn">acmCertificateArn</a></code> | <code>string</code> | The ARN of the ACM certificate to use for SSL/TLS encryption. |
 
 ---
 
@@ -6741,6 +6867,8 @@ public readonly domainName: string;
 
 - *Type:* string
 
+The domain name to use for the custom domain.
+
 ---
 
 ##### `hostedZoneId`<sup>Required</sup> <a name="hostedZoneId" id="arc-cdk.ICustomDomainName.property.hostedZoneId"></a>
@@ -6751,6 +6879,8 @@ public readonly hostedZoneId: string;
 
 - *Type:* string
 
+The ID of the Amazon Route 53 hosted zone associated with the domain.
+
 ---
 
 ##### `acmCertificateArn`<sup>Optional</sup> <a name="acmCertificateArn" id="arc-cdk.ICustomDomainName.property.acmCertificateArn"></a>
@@ -6760,6 +6890,8 @@ public readonly acmCertificateArn: string;
 ```
 
 - *Type:* string
+
+The ARN of the ACM certificate to use for SSL/TLS encryption.
 
 ---
 
@@ -6772,17 +6904,17 @@ public readonly acmCertificateArn: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ILambda.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.invocationData">invocationData</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambda.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambda.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#arc-cdk.ILambda.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
+| <code><a href="#arc-cdk.ILambda.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ILambda.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ILambda.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+| <code><a href="#arc-cdk.ILambda.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | Configuration for creating a new IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambda.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | The environment variables to set for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambda.property.invocationData">invocationData</a></code> | <code>string</code> | The data to pass to the Lambda function when it is invoked (optional). |
+| <code><a href="#arc-cdk.ILambda.property.layerPath">layerPath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's layer code (optional). |
+| <code><a href="#arc-cdk.ILambda.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambda.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
+| <code><a href="#arc-cdk.ILambda.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
 
 ---
 
@@ -6794,6 +6926,8 @@ public readonly codePath: string;
 
 - *Type:* string
 
+The local path to the directory containing the Lambda function's code.
+
 ---
 
 ##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ILambda.property.environment"></a>
@@ -6803,6 +6937,8 @@ public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment of the resource.
 
 ---
 
@@ -6814,6 +6950,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ILambda.property.namespace"></a>
@@ -6823,6 +6961,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -6834,6 +6974,8 @@ public readonly createRole: ICreateRole;
 
 - *Type:* <a href="#arc-cdk.ICreateRole">ICreateRole</a>
 
+Configuration for creating a new IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `envVars`<sup>Optional</sup> <a name="envVars" id="arc-cdk.ILambda.property.envVars"></a>
@@ -6843,6 +6985,8 @@ public readonly envVars: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+
+The environment variables to set for the Lambda function (optional).
 
 ---
 
@@ -6854,6 +6998,8 @@ public readonly invocationData: string;
 
 - *Type:* string
 
+The data to pass to the Lambda function when it is invoked (optional).
+
 ---
 
 ##### `layerPath`<sup>Optional</sup> <a name="layerPath" id="arc-cdk.ILambda.property.layerPath"></a>
@@ -6863,6 +7009,8 @@ public readonly layerPath: string;
 ```
 
 - *Type:* string
+
+The local path to the directory containing the Lambda function's layer code (optional).
 
 ---
 
@@ -6874,6 +7022,8 @@ public readonly roleArn: string;
 
 - *Type:* string
 
+The ARN of an existing IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `s3Bucket`<sup>Optional</sup> <a name="s3Bucket" id="arc-cdk.ILambda.property.s3Bucket"></a>
@@ -6884,7 +7034,7 @@ public readonly s3Bucket: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
+The S3 bucket to upload the Lambda function's code to (optional).
 
 ---
 
@@ -6895,6 +7045,8 @@ public readonly useImage: boolean;
 ```
 
 - *Type:* boolean
+
+Whether to use a Docker image for the Lambda function (optional).
 
 ---
 
@@ -6909,18 +7061,18 @@ public readonly useImage: boolean;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.invocationData">invocationData</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.customDomainName">customDomainName</a></code> | <code><a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a></code> | *No description.* |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | Configuration for creating a new IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | The environment variables to set for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.invocationData">invocationData</a></code> | <code>string</code> | The data to pass to the Lambda function when it is invoked (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.layerPath">layerPath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's layer code (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.customDomainName">customDomainName</a></code> | <code><a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a></code> | Custom domain name for the API Gateway endpoint (optional). |
 
 ---
 
@@ -6932,6 +7084,8 @@ public readonly codePath: string;
 
 - *Type:* string
 
+The local path to the directory containing the Lambda function's code.
+
 ---
 
 ##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ILambdaWithApiGateway.property.environment"></a>
@@ -6941,6 +7095,8 @@ public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment of the resource.
 
 ---
 
@@ -6952,6 +7108,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ILambdaWithApiGateway.property.namespace"></a>
@@ -6961,6 +7119,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -6972,6 +7132,8 @@ public readonly createRole: ICreateRole;
 
 - *Type:* <a href="#arc-cdk.ICreateRole">ICreateRole</a>
 
+Configuration for creating a new IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `envVars`<sup>Optional</sup> <a name="envVars" id="arc-cdk.ILambdaWithApiGateway.property.envVars"></a>
@@ -6981,6 +7143,8 @@ public readonly envVars: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+
+The environment variables to set for the Lambda function (optional).
 
 ---
 
@@ -6992,6 +7156,8 @@ public readonly invocationData: string;
 
 - *Type:* string
 
+The data to pass to the Lambda function when it is invoked (optional).
+
 ---
 
 ##### `layerPath`<sup>Optional</sup> <a name="layerPath" id="arc-cdk.ILambdaWithApiGateway.property.layerPath"></a>
@@ -7001,6 +7167,8 @@ public readonly layerPath: string;
 ```
 
 - *Type:* string
+
+The local path to the directory containing the Lambda function's layer code (optional).
 
 ---
 
@@ -7012,6 +7180,8 @@ public readonly roleArn: string;
 
 - *Type:* string
 
+The ARN of an existing IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `s3Bucket`<sup>Optional</sup> <a name="s3Bucket" id="arc-cdk.ILambdaWithApiGateway.property.s3Bucket"></a>
@@ -7022,7 +7192,7 @@ public readonly s3Bucket: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
+The S3 bucket to upload the Lambda function's code to (optional).
 
 ---
 
@@ -7034,6 +7204,8 @@ public readonly useImage: boolean;
 
 - *Type:* boolean
 
+Whether to use a Docker image for the Lambda function (optional).
+
 ---
 
 ##### `customDomainName`<sup>Optional</sup> <a name="customDomainName" id="arc-cdk.ILambdaWithApiGateway.property.customDomainName"></a>
@@ -7043,6 +7215,8 @@ public readonly customDomainName: ICustomDomainName;
 ```
 
 - *Type:* <a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a>
+
+Custom domain name for the API Gateway endpoint (optional).
 
 ---
 
@@ -7057,18 +7231,18 @@ public readonly customDomainName: ICustomDomainName;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.invocationData">invocationData</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.scheduleExpression">scheduleExpression</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | Configuration for creating a new IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | The environment variables to set for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.invocationData">invocationData</a></code> | <code>string</code> | The data to pass to the Lambda function when it is invoked (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.layerPath">layerPath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's layer code (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.scheduleExpression">scheduleExpression</a></code> | <code>string</code> | The schedule expression for the CloudWatch Event. |
 
 ---
 
@@ -7080,6 +7254,8 @@ public readonly codePath: string;
 
 - *Type:* string
 
+The local path to the directory containing the Lambda function's code.
+
 ---
 
 ##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ILambdaWithCloudWatchEvent.property.environment"></a>
@@ -7089,6 +7265,8 @@ public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment of the resource.
 
 ---
 
@@ -7100,6 +7278,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ILambdaWithCloudWatchEvent.property.namespace"></a>
@@ -7109,6 +7289,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -7120,6 +7302,8 @@ public readonly createRole: ICreateRole;
 
 - *Type:* <a href="#arc-cdk.ICreateRole">ICreateRole</a>
 
+Configuration for creating a new IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `envVars`<sup>Optional</sup> <a name="envVars" id="arc-cdk.ILambdaWithCloudWatchEvent.property.envVars"></a>
@@ -7129,6 +7313,8 @@ public readonly envVars: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+
+The environment variables to set for the Lambda function (optional).
 
 ---
 
@@ -7140,6 +7326,8 @@ public readonly invocationData: string;
 
 - *Type:* string
 
+The data to pass to the Lambda function when it is invoked (optional).
+
 ---
 
 ##### `layerPath`<sup>Optional</sup> <a name="layerPath" id="arc-cdk.ILambdaWithCloudWatchEvent.property.layerPath"></a>
@@ -7149,6 +7337,8 @@ public readonly layerPath: string;
 ```
 
 - *Type:* string
+
+The local path to the directory containing the Lambda function's layer code (optional).
 
 ---
 
@@ -7160,6 +7350,8 @@ public readonly roleArn: string;
 
 - *Type:* string
 
+The ARN of an existing IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `s3Bucket`<sup>Optional</sup> <a name="s3Bucket" id="arc-cdk.ILambdaWithCloudWatchEvent.property.s3Bucket"></a>
@@ -7170,7 +7362,7 @@ public readonly s3Bucket: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
+The S3 bucket to upload the Lambda function's code to (optional).
 
 ---
 
@@ -7182,6 +7374,8 @@ public readonly useImage: boolean;
 
 - *Type:* boolean
 
+Whether to use a Docker image for the Lambda function (optional).
+
 ---
 
 ##### `scheduleExpression`<sup>Required</sup> <a name="scheduleExpression" id="arc-cdk.ILambdaWithCloudWatchEvent.property.scheduleExpression"></a>
@@ -7191,6 +7385,8 @@ public readonly scheduleExpression: string;
 ```
 
 - *Type:* string
+
+The schedule expression for the CloudWatch Event.
 
 ---
 
@@ -7205,18 +7401,18 @@ public readonly scheduleExpression: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.invocationData">invocationData</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSns.property.kmsMasterKeyId">kmsMasterKeyId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | Configuration for creating a new IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | The environment variables to set for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.invocationData">invocationData</a></code> | <code>string</code> | The data to pass to the Lambda function when it is invoked (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.layerPath">layerPath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's layer code (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.kmsMasterKeyId">kmsMasterKeyId</a></code> | <code>string</code> | The AWS KMS key ID for encrypting messages sent to the function. |
 
 ---
 
@@ -7228,6 +7424,8 @@ public readonly codePath: string;
 
 - *Type:* string
 
+The local path to the directory containing the Lambda function's code.
+
 ---
 
 ##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ILambdaWithSns.property.environment"></a>
@@ -7237,6 +7435,8 @@ public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment of the resource.
 
 ---
 
@@ -7248,6 +7448,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ILambdaWithSns.property.namespace"></a>
@@ -7257,6 +7459,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -7268,6 +7472,8 @@ public readonly createRole: ICreateRole;
 
 - *Type:* <a href="#arc-cdk.ICreateRole">ICreateRole</a>
 
+Configuration for creating a new IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `envVars`<sup>Optional</sup> <a name="envVars" id="arc-cdk.ILambdaWithSns.property.envVars"></a>
@@ -7277,6 +7483,8 @@ public readonly envVars: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+
+The environment variables to set for the Lambda function (optional).
 
 ---
 
@@ -7288,6 +7496,8 @@ public readonly invocationData: string;
 
 - *Type:* string
 
+The data to pass to the Lambda function when it is invoked (optional).
+
 ---
 
 ##### `layerPath`<sup>Optional</sup> <a name="layerPath" id="arc-cdk.ILambdaWithSns.property.layerPath"></a>
@@ -7297,6 +7507,8 @@ public readonly layerPath: string;
 ```
 
 - *Type:* string
+
+The local path to the directory containing the Lambda function's layer code (optional).
 
 ---
 
@@ -7308,6 +7520,8 @@ public readonly roleArn: string;
 
 - *Type:* string
 
+The ARN of an existing IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `s3Bucket`<sup>Optional</sup> <a name="s3Bucket" id="arc-cdk.ILambdaWithSns.property.s3Bucket"></a>
@@ -7318,7 +7532,7 @@ public readonly s3Bucket: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
+The S3 bucket to upload the Lambda function's code to (optional).
 
 ---
 
@@ -7330,6 +7544,8 @@ public readonly useImage: boolean;
 
 - *Type:* boolean
 
+Whether to use a Docker image for the Lambda function (optional).
+
 ---
 
 ##### `kmsMasterKeyId`<sup>Required</sup> <a name="kmsMasterKeyId" id="arc-cdk.ILambdaWithSns.property.kmsMasterKeyId"></a>
@@ -7339,6 +7555,8 @@ public readonly kmsMasterKeyId: string;
 ```
 
 - *Type:* string
+
+The AWS KMS key ID for encrypting messages sent to the function.
 
 ---
 
@@ -7353,25 +7571,25 @@ public readonly kmsMasterKeyId: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.codePath">codePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.environment">environment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.invocationData">invocationData</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.layerPath">layerPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}. |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.useImage">useImage</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.batchSize">batchSize</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.delaySeconds">delaySeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.kmsDataKeyReusePeriodSeconds">kmsDataKeyReusePeriodSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.kmsMasterKeyId">kmsMasterKeyId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.maxMessageSize">maxMessageSize</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.maxReceiveCount">maxReceiveCount</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.messageRetentionSeconds">messageRetentionSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#arc-cdk.ILambdaWithSqs.property.receiveWaitTimeSeconds">receiveWaitTimeSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.name">name</a></code> | <code>string</code> | The name of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.createRole">createRole</a></code> | <code><a href="#arc-cdk.ICreateRole">ICreateRole</a></code> | Configuration for creating a new IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | The environment variables to set for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.invocationData">invocationData</a></code> | <code>string</code> | The data to pass to the Lambda function when it is invoked (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.layerPath">layerPath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's layer code (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.batchSize">batchSize</a></code> | <code>number</code> | The maximum number of messages to retrieve from the queue during a single request to the Amazon SQS service. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.delaySeconds">delaySeconds</a></code> | <code>number</code> | The length of time, in seconds, for which the delivery of all messages in the queue is delayed. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.kmsDataKeyReusePeriodSeconds">kmsDataKeyReusePeriodSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.kmsMasterKeyId">kmsMasterKeyId</a></code> | <code>string</code> | The ID or ARN of the KMS key that is used to encrypt messages in the queue. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.maxMessageSize">maxMessageSize</a></code> | <code>number</code> | The maximum size of the message payload that is allowed to be published to the queue, in bytes. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.maxReceiveCount">maxReceiveCount</a></code> | <code>number</code> | The number of times a message is delivered to the source queue before being moved to the dead-letter queue. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.messageRetentionSeconds">messageRetentionSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which Amazon SQS retains messages that are not deleted. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.receiveWaitTimeSeconds">receiveWaitTimeSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which the call waits for a message to arrive in the queue before returning. |
 
 ---
 
@@ -7383,6 +7601,8 @@ public readonly codePath: string;
 
 - *Type:* string
 
+The local path to the directory containing the Lambda function's code.
+
 ---
 
 ##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ILambdaWithSqs.property.environment"></a>
@@ -7392,6 +7612,8 @@ public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment of the resource.
 
 ---
 
@@ -7403,6 +7625,8 @@ public readonly name: string;
 
 - *Type:* string
 
+The name of the resource.
+
 ---
 
 ##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ILambdaWithSqs.property.namespace"></a>
@@ -7412,6 +7636,8 @@ public readonly namespace: string;
 ```
 
 - *Type:* string
+
+The namespace of the resource.
 
 ---
 
@@ -7423,6 +7649,8 @@ public readonly createRole: ICreateRole;
 
 - *Type:* <a href="#arc-cdk.ICreateRole">ICreateRole</a>
 
+Configuration for creating a new IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `envVars`<sup>Optional</sup> <a name="envVars" id="arc-cdk.ILambdaWithSqs.property.envVars"></a>
@@ -7432,6 +7660,8 @@ public readonly envVars: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+
+The environment variables to set for the Lambda function (optional).
 
 ---
 
@@ -7443,6 +7673,8 @@ public readonly invocationData: string;
 
 - *Type:* string
 
+The data to pass to the Lambda function when it is invoked (optional).
+
 ---
 
 ##### `layerPath`<sup>Optional</sup> <a name="layerPath" id="arc-cdk.ILambdaWithSqs.property.layerPath"></a>
@@ -7452,6 +7684,8 @@ public readonly layerPath: string;
 ```
 
 - *Type:* string
+
+The local path to the directory containing the Lambda function's layer code (optional).
 
 ---
 
@@ -7463,6 +7697,8 @@ public readonly roleArn: string;
 
 - *Type:* string
 
+The ARN of an existing IAM role to attach to the Lambda function (optional).
+
 ---
 
 ##### `s3Bucket`<sup>Optional</sup> <a name="s3Bucket" id="arc-cdk.ILambdaWithSqs.property.s3Bucket"></a>
@@ -7473,7 +7709,7 @@ public readonly s3Bucket: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
+The S3 bucket to upload the Lambda function's code to (optional).
 
 ---
 
@@ -7485,6 +7721,8 @@ public readonly useImage: boolean;
 
 - *Type:* boolean
 
+Whether to use a Docker image for the Lambda function (optional).
+
 ---
 
 ##### `batchSize`<sup>Required</sup> <a name="batchSize" id="arc-cdk.ILambdaWithSqs.property.batchSize"></a>
@@ -7494,6 +7732,8 @@ public readonly batchSize: number;
 ```
 
 - *Type:* number
+
+The maximum number of messages to retrieve from the queue during a single request to the Amazon SQS service.
 
 ---
 
@@ -7505,6 +7745,10 @@ public readonly delaySeconds: number;
 
 - *Type:* number
 
+The length of time, in seconds, for which the delivery of all messages in the queue is delayed.
+
+Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
+
 ---
 
 ##### `kmsDataKeyReusePeriodSeconds`<sup>Required</sup> <a name="kmsDataKeyReusePeriodSeconds" id="arc-cdk.ILambdaWithSqs.property.kmsDataKeyReusePeriodSeconds"></a>
@@ -7514,6 +7758,8 @@ public readonly kmsDataKeyReusePeriodSeconds: number;
 ```
 
 - *Type:* number
+
+The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
 
 ---
 
@@ -7525,6 +7771,8 @@ public readonly kmsMasterKeyId: string;
 
 - *Type:* string
 
+The ID or ARN of the KMS key that is used to encrypt messages in the queue.
+
 ---
 
 ##### `maxMessageSize`<sup>Required</sup> <a name="maxMessageSize" id="arc-cdk.ILambdaWithSqs.property.maxMessageSize"></a>
@@ -7534,6 +7782,8 @@ public readonly maxMessageSize: number;
 ```
 
 - *Type:* number
+
+The maximum size of the message payload that is allowed to be published to the queue, in bytes.
 
 ---
 
@@ -7545,6 +7795,10 @@ public readonly maxReceiveCount: number;
 
 - *Type:* number
 
+The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
+
+Default: 10.
+
 ---
 
 ##### `messageRetentionSeconds`<sup>Required</sup> <a name="messageRetentionSeconds" id="arc-cdk.ILambdaWithSqs.property.messageRetentionSeconds"></a>
@@ -7555,6 +7809,8 @@ public readonly messageRetentionSeconds: number;
 
 - *Type:* number
 
+The length of time, in seconds, for which Amazon SQS retains messages that are not deleted.
+
 ---
 
 ##### `receiveWaitTimeSeconds`<sup>Required</sup> <a name="receiveWaitTimeSeconds" id="arc-cdk.ILambdaWithSqs.property.receiveWaitTimeSeconds"></a>
@@ -7564,6 +7820,8 @@ public readonly receiveWaitTimeSeconds: number;
 ```
 
 - *Type:* number
+
+The length of time, in seconds, for which the call waits for a message to arrive in the queue before returning.
 
 ---
 
