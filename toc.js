@@ -8,7 +8,6 @@ const addToc = () => {
     const apiData = toc.insert(
       `<!-- toc --> <!-- tocstop --> ${mardownContent}`,
       {
-        stripHeadingTags: false,
         maxdepth: 3,
       }
     );

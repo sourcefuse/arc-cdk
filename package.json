@@ -73,6 +73,12 @@
     "cdktf": "^0.15.3",
     "constructs": "^10.1.232"
   },
+  "dependencies": {
+    "short-unique-id": "^4.4.4"
+  },
+  "bundledDependencies": [
+    "short-unique-id"
+  ],
   "keywords": [
     "arc",
     "aws",

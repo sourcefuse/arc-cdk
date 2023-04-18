@@ -1,6 +1,4 @@
-import { IBase } from "../../utils/interfaces";
-
-export interface ICreateEcrImage extends IBase {
+export interface ICreateEcrImage {
   /**
    * The path to the directory containing the Dockerfile and application code.
    */

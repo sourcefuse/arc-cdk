@@ -2,36 +2,36 @@
 
 <!-- toc -->
 
-- [API Reference](#api-reference-a-nameapi-reference-idapi-referencea)
-  * [Constructs](#constructs-a-nameconstructs-idconstructsa)
-    + [ApiGatewayCustomDomainName](#apigatewaycustomdomainname-a-nameapigatewaycustomdomainname-idarc-cdkapigatewaycustomdomainnamea)
-    + [CreateAcmCertificate](#createacmcertificate-a-namecreateacmcertificate-idarc-cdkcreateacmcertificatea)
-    + [CreateEcrImage](#createecrimage-a-namecreateecrimage-idarc-cdkcreateecrimagea)
-    + [CreateEcrRepository](#createecrrepository-a-namecreateecrrepository-idarc-cdkcreateecrrepositorya)
-    + [CreateLambdaRole](#createlambdarole-a-namecreatelambdarole-idarc-cdkcreatelambdarolea)
-    + [DbModule](#dbmodule-a-namedbmodule-idarc-cdkdbmodulea)
-    + [ElastiCache](#elasticache-a-nameelasticache-idarc-cdkelasticachea)
-    + [Lambda](#lambda-a-namelambda-idarc-cdklambdaa)
-    + [LambdaWithApiGateway](#lambdawithapigateway-a-namelambdawithapigateway-idarc-cdklambdawithapigatewaya)
-    + [LambdaWithCloudWatchEvent](#lambdawithcloudwatchevent-a-namelambdawithcloudwatchevent-idarc-cdklambdawithcloudwatcheventa)
-    + [LambdaWithSns](#lambdawithsns-a-namelambdawithsns-idarc-cdklambdawithsnsa)
-    + [LambdaWithSqs](#lambdawithsqs-a-namelambdawithsqs-idarc-cdklambdawithsqsa)
-  * [Structs](#structs-a-namestructs-idstructsa)
-    + [DbModuleConfig](#dbmoduleconfig-a-namedbmoduleconfig-idarc-cdkdbmoduleconfiga)
-    + [ElastiCacheConfig](#elasticacheconfig-a-nameelasticacheconfig-idarc-cdkelasticacheconfiga)
-  * [Protocols](#protocols-a-nameprotocols-idprotocolsa)
-    + [IAcmCertificate](#iacmcertificate-a-nameiacmcertificate-idarc-cdkiacmcertificatea)
-    + [IApiGatewayCustomDomainName](#iapigatewaycustomdomainname-a-nameiapigatewaycustomdomainname-idarc-cdkiapigatewaycustomdomainnamea)
-    + [ICreateEcrImage](#icreateecrimage-a-nameicreateecrimage-idarc-cdkicreateecrimagea)
-    + [ICreateEcrRepository](#icreateecrrepository-a-nameicreateecrrepository-idarc-cdkicreateecrrepositorya)
-    + [ICreateLambdaRole](#icreatelambdarole-a-nameicreatelambdarole-idarc-cdkicreatelambdarolea)
-    + [ICreateRole](#icreaterole-a-nameicreaterole-idarc-cdkicreaterolea)
-    + [ICustomDomainName](#icustomdomainname-a-nameicustomdomainname-idarc-cdkicustomdomainnamea)
-    + [ILambda](#ilambda-a-nameilambda-idarc-cdkilambdaa)
-    + [ILambdaWithApiGateway](#ilambdawithapigateway-a-nameilambdawithapigateway-idarc-cdkilambdawithapigatewaya)
-    + [ILambdaWithCloudWatchEvent](#ilambdawithcloudwatchevent-a-nameilambdawithcloudwatchevent-idarc-cdkilambdawithcloudwatcheventa)
-    + [ILambdaWithSns](#ilambdawithsns-a-nameilambdawithsns-idarc-cdkilambdawithsnsa)
-    + [ILambdaWithSqs](#ilambdawithsqs-a-nameilambdawithsqs-idarc-cdkilambdawithsqsa)
+- [API Reference](#api-reference-)
+  * [Constructs](#constructs-)
+    + [ApiGatewayCustomDomainName](#apigatewaycustomdomainname-)
+    + [CreateAcmCertificate](#createacmcertificate-)
+    + [CreateEcrImage](#createecrimage-)
+    + [CreateEcrRepository](#createecrrepository-)
+    + [CreateLambdaRole](#createlambdarole-)
+    + [DbModule](#dbmodule-)
+    + [ElastiCache](#elasticache-)
+    + [Lambda](#lambda-)
+    + [LambdaWithApiGateway](#lambdawithapigateway-)
+    + [LambdaWithCloudWatchEvent](#lambdawithcloudwatchevent-)
+    + [LambdaWithSns](#lambdawithsns-)
+    + [LambdaWithSqs](#lambdawithsqs-)
+  * [Structs](#structs-)
+    + [DbModuleConfig](#dbmoduleconfig-)
+    + [ElastiCacheConfig](#elasticacheconfig-)
+  * [Protocols](#protocols-)
+    + [IAcmCertificate](#iacmcertificate-)
+    + [IApiGatewayCustomDomainName](#iapigatewaycustomdomainname-)
+    + [ICreateEcrImage](#icreateecrimage-)
+    + [ICreateEcrRepository](#icreateecrrepository-)
+    + [ICreateLambdaRole](#icreatelambdarole-)
+    + [ICreateRole](#icreaterole-)
+    + [ICustomDomainName](#icustomdomainname-)
+    + [ILambda](#ilambda-)
+    + [ILambdaWithApiGateway](#ilambdawithapigateway-)
+    + [ILambdaWithCloudWatchEvent](#ilambdawithcloudwatchevent-)
+    + [ILambdaWithSns](#ilambdawithsns-)
+    + [ILambdaWithSqs](#ilambdawithsqs-)
 
 <!-- tocstop -->
 
@@ -6611,9 +6611,6 @@ The name of the deployment stage associated with the custom domain (if any).
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#arc-cdk.ICreateEcrImage.property.codePath">codePath</a></code> | <code>string</code> | The path to the directory containing the Dockerfile and application code. |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.name">name</a></code> | <code>string</code> | The name of the resource. |
-| <code><a href="#arc-cdk.ICreateEcrImage.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
 | <code><a href="#arc-cdk.ICreateEcrImage.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | The URL of the ECR repository to which the image will be pushed. |
 
 ---
@@ -6627,42 +6624,6 @@ public readonly codePath: string;
 - *Type:* string
 
 The path to the directory containing the Dockerfile and application code.
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.ICreateEcrImage.property.environment"></a>
-
-```typescript
-public readonly environment: string;
-```
-
-- *Type:* string
-
-The environment of the resource.
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.ICreateEcrImage.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-The name of the resource.
-
----
-
-##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICreateEcrImage.property.namespace"></a>
-
-```typescript
-public readonly namespace: string;
-```
-
-- *Type:* string
-
-The namespace of the resource.
 
 ---
 

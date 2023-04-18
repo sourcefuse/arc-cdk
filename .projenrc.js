@@ -10,6 +10,7 @@ const project = new cdktf.ConstructLibraryCdktf({
   prettier: true,
   releaseToNpm: true,
   peerDeps: ["@cdktf/provider-aws@^12.0.4", "@cdktf/provider-docker@^6.0.1"],
+  bundledDeps: ["short-unique-id@^4.4.4"],
   depsUpgrade: false,
   devDeps: [
     "markdown-toc@^1.2.0",

@@ -149,6 +149,11 @@
       "type": "build"
     },
     {
+      "name": "short-unique-id",
+      "version": "^4.4.4",
+      "type": "bundled"
+    },
+    {
       "name": "@types/babel__traverse",
       "version": "7.18.2",
       "type": "override"

@@ -85,17 +85,15 @@ export class Lambda extends Construct {
       });
 
       const image = new CreateEcrImage(this, "lambda-image", {
-        namespace,
-        environment,
-        name,
         codePath,
         repositoryUrl: repo.ecrRepository.repositoryUrl,
       });
 
       lambdaConfig = {
         ...lambdaConfig,
-        imageUri: image.ecrImage.name,
+        imageUri: image?.ecrImage?.name,
         packageType: "Image",
+        sourceCodeHash: image?.ecrImage?.id,
         ...restConfig,
       };
     } else {

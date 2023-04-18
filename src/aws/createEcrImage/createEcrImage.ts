@@ -2,9 +2,8 @@ import * as aws from "@cdktf/provider-aws";
 import * as docker from "@cdktf/provider-docker";
 import { RegistryImage } from "@cdktf/provider-docker/lib/registry-image";
 import { Construct } from "constructs";
+import ShortUniqueId from "short-unique-id";
 import { ICreateEcrImage } from "./interface";
-import { getResourceName } from "../../utils/helper";
-
 export class CreateEcrImage extends Construct {
   /** The created ECR image. */
   ecrImage: RegistryImage;
@@ -18,13 +17,7 @@ export class CreateEcrImage extends Construct {
   constructor(scope: Construct, id: string, config: ICreateEcrImage) {
     super(scope, id);
 
-    const { namespace, environment, name, codePath, repositoryUrl } = config;
-
-    const resourceName = getResourceName({
-      namespace: namespace,
-      environment: environment,
-      name: name,
-    });
+    const { codePath, repositoryUrl } = config;
 
     const awsCallerIdentity =
       new aws.dataAwsCallerIdentity.DataAwsCallerIdentity(
@@ -48,11 +41,12 @@ export class CreateEcrImage extends Construct {
       ],
     });
 
+    const uid = new ShortUniqueId({ length: 10 });
     const dockerImage = new docker.image.Image(this, "image", {
       buildAttribute: {
         context: codePath,
       },
-      name: `${repositoryUrl}:${resourceName}`,
+      name: `${repositoryUrl}:${uid()}`,
     });
 
     this.ecrImage = new docker.registryImage.RegistryImage(this, "ecr-image", {
