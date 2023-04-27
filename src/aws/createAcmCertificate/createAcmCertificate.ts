@@ -1,6 +1,7 @@
 import * as aws from "@cdktf/provider-aws";
 import { Construct } from "constructs";
 import { IAcmCertificate } from "./interface";
+import { Tags } from "../tags";
 
 /**
  * Creates an ACM Certificate with the specified domain name and hosted zone ID.
@@ -19,17 +20,25 @@ export class CreateAcmCertificate extends Construct {
   constructor(scope: Construct, id: string, config: IAcmCertificate) {
     super(scope, id);
 
-    let { domainName, hostedZoneId, ttl } = config;
+    let { domainName, hostedZoneId, ttl, namespace, environment, tags } =
+      config;
+
+    const defaultTags = new Tags(this, "createAcmCertificateTags", {
+      project: namespace,
+      environment,
+      extraTags: tags,
+    });
 
     const awsAcmCertificate = new aws.acmCertificate.AcmCertificate(
       this,
-      "cert",
+      "acmCertificate",
       {
         domainName,
         validationMethod: "DNS",
         lifecycle: {
           createBeforeDestroy: true,
         },
+        tags: defaultTags.tagsOutput,
       }
     );
 
@@ -37,7 +46,7 @@ export class CreateAcmCertificate extends Construct {
 
     const awsRoute53Record = new aws.route53Record.Route53Record(
       this,
-      "route53Record",
+      "createAcmCertificateRoute53Record",
       {
         allowOverwrite: true,
         name: `\${each.value.name}`,

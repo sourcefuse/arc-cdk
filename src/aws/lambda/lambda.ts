@@ -11,7 +11,7 @@ import { getResourceName } from "../../utils/helper";
 import { CreateEcrImage } from "../createEcrImage";
 import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
-
+import { Tags } from "../tags";
 export class Lambda extends Construct {
   /**
    * The Amazon Resource Name (ARN) of the Lambda function.
@@ -48,6 +48,7 @@ export class Lambda extends Construct {
       createRole,
       s3Bucket,
       useImage,
+      tags,
       ...restConfig
     } = config;
 
@@ -57,17 +58,24 @@ export class Lambda extends Construct {
       name,
     });
 
+    const defaultTags = new Tags(this, "lambdaTags", {
+      project: namespace,
+      environment,
+      extraTags: tags,
+    });
+
     if (!roleArn) {
       createRole = {
         iamPolicy: createRole?.iamPolicy ?? JSON.stringify(iamLambdaPolicy),
         iamRole: createRole?.iamRole ?? JSON.stringify(iamLambdaRole),
       };
-      const role = new CreateLambdaRole(this, "lambda-role", {
+      const role = new CreateLambdaRole(this, "createLambdaRole", {
         namespace,
         environment,
         name: resourceName,
         iamRole: createRole.iamRole,
         iamPolicy: createRole.iamPolicy,
+        tags,
       });
       roleArn = role.arn;
     }
@@ -75,6 +83,7 @@ export class Lambda extends Construct {
     let lambdaConfig: LambdaFunctionConfig = {
       functionName: resourceName,
       role: roleArn,
+      tags: defaultTags.tagsOutput,
     };
 
     if (useImage) {
@@ -82,6 +91,7 @@ export class Lambda extends Construct {
         namespace,
         environment,
         name,
+        tags,
       });
 
       const image = new CreateEcrImage(this, "lambda-image", {
@@ -98,7 +108,7 @@ export class Lambda extends Construct {
       };
     } else {
       // Creating Archive of Lambda
-      const asset = new TerraformAsset(this, "lambda-asset", {
+      const asset = new TerraformAsset(this, "lambdaCodeAsset", {
         path: codePath,
         type: AssetType.ARCHIVE, // if left empty it infers directory and file
       });
@@ -106,7 +116,7 @@ export class Lambda extends Construct {
       const layers: string[] = [];
       if (layerPath) {
         // Creating Archive of Lambda Layer
-        const layerAsset = new TerraformAsset(this, "lambda-layer-asset", {
+        const layerAsset = new TerraformAsset(this, "lambdaLayerAsset", {
           path: layerPath,
           type: AssetType.ARCHIVE, // if left empty it infers directory and file
         });
@@ -114,14 +124,15 @@ export class Lambda extends Construct {
         let lambdaLayers: aws.lambdaLayerVersion.LambdaLayerVersion;
 
         if (s3Bucket) {
-          const s3Object = new aws.s3Object.S3Object(this, "s3", {
+          const s3Object = new aws.s3Object.S3Object(this, "s3Object", {
             bucket: s3Bucket,
             key: resourceName,
             source: layerAsset.path,
+            tags: defaultTags.tagsOutput,
           });
           lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
             this,
-            "lambda-layer",
+            "lambdaLayerVersion",
             {
               s3Bucket: s3Bucket,
               s3Key: s3Object.key,
@@ -132,7 +143,7 @@ export class Lambda extends Construct {
           // Create Lambda Layer for function
           lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
             this,
-            "lambda-layer",
+            "lambdaLayerVersion",
             {
               filename: layerAsset.path,
               layerName: resourceName,
@@ -153,14 +164,14 @@ export class Lambda extends Construct {
     // Create Lambda function
     this.lambdaFunc = new aws.lambdaFunction.LambdaFunction(
       this,
-      "lambda-function",
+      "lambdaFunction",
       lambdaConfig
     );
 
     if (invocationData) {
       new aws.dataAwsLambdaInvocation.DataAwsLambdaInvocation( // NOSONAR
         this,
-        "invocation",
+        "dataAwsLambdaInvocation",
         {
           functionName: this.lambdaFunc.functionName,
           input: invocationData,

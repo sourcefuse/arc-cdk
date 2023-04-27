@@ -6648,9 +6648,22 @@ The URL of the ECR repository to which the image will be pushed.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ICreateEcrRepository.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ICreateEcrRepository.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ICreateEcrRepository.property.name">name</a></code> | <code>string</code> | The name of the resource. |
 | <code><a href="#arc-cdk.ICreateEcrRepository.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ICreateEcrRepository.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 
@@ -6699,11 +6712,24 @@ The namespace of the resource.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ICreateLambdaRole.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ICreateLambdaRole.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ICreateLambdaRole.property.iamPolicy">iamPolicy</a></code> | <code>string</code> | The IAM Policy to be created. |
 | <code><a href="#arc-cdk.ICreateLambdaRole.property.iamRole">iamRole</a></code> | <code>string</code> | The IAM Role to be created. |
 | <code><a href="#arc-cdk.ICreateLambdaRole.property.name">name</a></code> | <code>string</code> | The name of the resource. |
 | <code><a href="#arc-cdk.ICreateLambdaRole.property.namespace">namespace</a></code> | <code>string</code> | The namespace of the resource. |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ICreateLambdaRole.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 
@@ -6865,6 +6891,7 @@ The ARN of the ACM certificate to use for SSL/TLS encryption.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ILambda.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ILambda.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
 | <code><a href="#arc-cdk.ILambda.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ILambda.property.name">name</a></code> | <code>string</code> | The name of the resource. |
@@ -6876,6 +6903,18 @@ The ARN of the ACM certificate to use for SSL/TLS encryption.
 | <code><a href="#arc-cdk.ILambda.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
 | <code><a href="#arc-cdk.ILambda.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
 | <code><a href="#arc-cdk.ILambda.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ILambda.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 
@@ -7022,6 +7061,7 @@ Whether to use a Docker image for the Lambda function (optional).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.name">name</a></code> | <code>string</code> | The name of the resource. |
@@ -7034,6 +7074,18 @@ Whether to use a Docker image for the Lambda function (optional).
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.customDomainName">customDomainName</a></code> | <code><a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a></code> | Custom domain name for the API Gateway endpoint (optional). |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ILambdaWithApiGateway.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 
@@ -7192,6 +7244,7 @@ Custom domain name for the API Gateway endpoint (optional).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.name">name</a></code> | <code>string</code> | The name of the resource. |
@@ -7204,6 +7257,18 @@ Custom domain name for the API Gateway endpoint (optional).
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
 | <code><a href="#arc-cdk.ILambdaWithCloudWatchEvent.property.scheduleExpression">scheduleExpression</a></code> | <code>string</code> | The schedule expression for the CloudWatch Event. |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ILambdaWithCloudWatchEvent.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 
@@ -7362,6 +7427,7 @@ The schedule expression for the CloudWatch Event.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ILambdaWithSns.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.name">name</a></code> | <code>string</code> | The name of the resource. |
@@ -7374,6 +7440,18 @@ The schedule expression for the CloudWatch Event.
 | <code><a href="#arc-cdk.ILambdaWithSns.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
 | <code><a href="#arc-cdk.ILambdaWithSns.property.kmsMasterKeyId">kmsMasterKeyId</a></code> | <code>string</code> | The AWS KMS key ID for encrypting messages sent to the function. |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ILambdaWithSns.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 
@@ -7532,6 +7610,7 @@ The AWS KMS key ID for encrypting messages sent to the function.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | The tags of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.codePath">codePath</a></code> | <code>string</code> | The local path to the directory containing the Lambda function's code. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.environment">environment</a></code> | <code>string</code> | The environment of the resource. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.name">name</a></code> | <code>string</code> | The name of the resource. |
@@ -7551,6 +7630,18 @@ The AWS KMS key ID for encrypting messages sent to the function.
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.maxReceiveCount">maxReceiveCount</a></code> | <code>number</code> | The number of times a message is delivered to the source queue before being moved to the dead-letter queue. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.messageRetentionSeconds">messageRetentionSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which Amazon SQS retains messages that are not deleted. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.receiveWaitTimeSeconds">receiveWaitTimeSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which the call waits for a message to arrive in the queue before returning. |
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="arc-cdk.ILambdaWithSqs.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+The tags of the resource.
 
 ---
 

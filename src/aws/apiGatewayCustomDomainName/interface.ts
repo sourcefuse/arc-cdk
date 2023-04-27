@@ -1,4 +1,9 @@
-export interface IApiGatewayCustomDomainName {
+import { IBase } from "../../utils/interfaces";
+
+/** @internal */
+interface BaseConfig extends Omit<IBase, "name"> {}
+
+export interface IApiGatewayCustomDomainName extends BaseConfig {
   /**
    * The domain name for the custom domain.
    */

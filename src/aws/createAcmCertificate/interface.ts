@@ -1,4 +1,9 @@
-export interface IAcmCertificate {
+import { IBase } from "../../utils/interfaces";
+
+/** @internal */
+interface BaseConfig extends Omit<IBase, "name"> {}
+
+export interface IAcmCertificate extends BaseConfig {
   /**
    * The domain name associated with the certificate.
    */

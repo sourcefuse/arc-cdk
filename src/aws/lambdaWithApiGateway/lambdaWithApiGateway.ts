@@ -5,7 +5,7 @@ import { getResourceName } from "../../utils/helper";
 import { ApiGatewayCustomDomainName } from "../apiGatewayCustomDomainName";
 import { CreateAcmCertificate } from "../createAcmCertificate";
 import { Lambda } from "../lambda";
-
+import { Tags } from "../tags";
 export class LambdaWithApiGateway extends Construct {
   /**
    * The HTTP URL of the API Gateway or the domain name if the custom domain name is provided.
@@ -20,8 +20,14 @@ export class LambdaWithApiGateway extends Construct {
   constructor(scope: Construct, id: string, config: ILambdaWithApiGateway) {
     super(scope, id);
 
-    let { namespace, environment, name, customDomainName, ...restConfig } =
-      config;
+    let {
+      namespace,
+      environment,
+      name,
+      customDomainName,
+      tags,
+      ...restConfig
+    } = config;
 
     const resourceName = getResourceName({
       namespace: namespace,
@@ -29,21 +35,33 @@ export class LambdaWithApiGateway extends Construct {
       name,
     });
 
+    const defaultTags = new Tags(this, "lambdaTags", {
+      project: namespace,
+      environment,
+      extraTags: tags,
+    });
+
     const lambda = new Lambda(this, `lambda`, {
       namespace,
       environment,
       name,
+      tags,
       ...restConfig,
     });
 
     // Create and configure API gateway
-    const api = new aws.apigatewayv2Api.Apigatewayv2Api(this, "api-gw", {
-      name: resourceName,
-      protocolType: "HTTP",
-      target: lambda.arn,
-    });
+    const api = new aws.apigatewayv2Api.Apigatewayv2Api(
+      this,
+      "apigatewayv2Api",
+      {
+        name: resourceName,
+        protocolType: "HTTP",
+        target: lambda.arn,
+        tags: defaultTags.tagsOutput,
+      }
+    );
 
-    new aws.lambdaPermission.LambdaPermission(this, "apigw-lambda-permission", {
+    new aws.lambdaPermission.LambdaPermission(this, "lambdaPermission", {
       // NOSONAR
       functionName: lambda.functionName,
       action: "lambda:InvokeFunction",
@@ -63,13 +81,19 @@ export class LambdaWithApiGateway extends Construct {
           {
             domainName: newCustomDomainName.domainName,
             hostedZoneId: newCustomDomainName.hostedZoneId,
+            namespace,
+            environment,
+            tags,
           }
         );
         newCustomDomainName.acmCertificateArn = acmCertificate.acmArn;
       }
-      new ApiGatewayCustomDomainName(this, "api-gateway-custom-domain-name", {
+      new ApiGatewayCustomDomainName(this, "apiGatewayCustomDomainName", {
         // NOSONAR
         apiId: api.id,
+        namespace,
+        environment,
+        tags,
         ...newCustomDomainName,
       });
     }

@@ -4,7 +4,7 @@ import { ILambdaWithSns } from "./interface";
 import { iamLambdaRole, iamSnsPolicy } from "../../constants";
 import { getResourceName } from "../../utils/helper";
 import { Lambda } from "../lambda";
-
+import { Tags } from "../tags";
 export class LambdaWithSns extends Construct {
   /**
    * @param scope The parent construct of this stack.
@@ -20,6 +20,7 @@ export class LambdaWithSns extends Construct {
       name,
       kmsMasterKeyId,
       createRole,
+      tags,
       ...restConfig
     } = config;
 
@@ -27,6 +28,12 @@ export class LambdaWithSns extends Construct {
       namespace,
       environment,
       name,
+    });
+
+    const defaultTags = new Tags(this, "lambdaWithSnsTags", {
+      project: namespace,
+      environment,
+      extraTags: tags,
     });
 
     const lambda = new Lambda(this, "lambda", {
@@ -37,17 +44,19 @@ export class LambdaWithSns extends Construct {
         iamRole: createRole?.iamRole ?? JSON.stringify(iamLambdaRole),
         iamPolicy: createRole?.iamPolicy ?? JSON.stringify(iamSnsPolicy),
       },
+      tags,
       ...restConfig,
     });
 
     const awsSnsTopic = new aws.snsTopic.SnsTopic(this, "sns-topic", {
       name: resourceName,
       kmsMasterKeyId: kmsMasterKeyId,
+      tags: defaultTags.tagsOutput,
     });
 
     new aws.snsTopicSubscription.SnsTopicSubscription(
       this,
-      "sns-topic-subscription",
+      "snsTopicSubscription",
       {
         // NOSONAR
         topicArn: awsSnsTopic.arn,
@@ -56,15 +65,12 @@ export class LambdaWithSns extends Construct {
       }
     );
 
-    new aws.lambdaPermission.LambdaPermission( // NOSONAR
-      this,
-      "lambda-permission-with-sns",
-      {
-        action: "lambda:InvokeFunction",
-        functionName: lambda.functionName,
-        principal: "sns.amazonaws.com",
-        sourceArn: awsSnsTopic.arn,
-      }
-    );
+    new aws.lambdaPermission.LambdaPermission(this, "snsLambdaPermission", {
+      // NOSONAR
+      action: "lambda:InvokeFunction",
+      functionName: lambda.functionName,
+      principal: "sns.amazonaws.com",
+      sourceArn: awsSnsTopic.arn,
+    });
   }
 }

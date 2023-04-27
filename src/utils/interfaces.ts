@@ -14,4 +14,11 @@ export interface IBase {
    * The name of the resource.
    */
   name: string;
+
+  /**
+   * The tags of the resource.
+   */
+  readonly tags?: {
+    [key: string]: string;
+  };
 }

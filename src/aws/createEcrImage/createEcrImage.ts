@@ -31,7 +31,7 @@ export class CreateEcrImage extends Construct {
         "awsEcrAuthorizationToken"
       );
 
-    new docker.provider.DockerProvider(this, "auth", {
+    new docker.provider.DockerProvider(this, "dockerProvider", {
       registryAuth: [
         {
           address: `${awsCallerIdentity.accountId}.dkr.ecr.${process.env.AWS_REGION}.amazonaws.com`,
@@ -49,7 +49,7 @@ export class CreateEcrImage extends Construct {
       name: `${repositoryUrl}:${uid()}`,
     });
 
-    this.ecrImage = new docker.registryImage.RegistryImage(this, "ecr-image", {
+    this.ecrImage = new docker.registryImage.RegistryImage(this, "ecrImage", {
       name: dockerImage.name,
     });
   }
