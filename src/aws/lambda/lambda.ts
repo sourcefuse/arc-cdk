@@ -12,6 +12,7 @@ import { CreateEcrImage } from "../createEcrImage";
 import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
 import { Tags } from "../tags";
+
 export class Lambda extends Construct {
   /**
    * The Amazon Resource Name (ARN) of the Lambda function.
@@ -130,13 +131,15 @@ export class Lambda extends Construct {
             source: layerAsset.path,
             tags: defaultTags.tagsOutput,
           });
+
           lambdaLayers = new aws.lambdaLayerVersion.LambdaLayerVersion(
             this,
             "lambdaLayerVersion",
             {
               s3Bucket: s3Bucket,
               s3Key: s3Object.key,
-              layerName: "resourceName",
+              layerName: resourceName,
+              sourceCodeHash: `\${filebase64sha256("${layerAsset.path}")}`,
             }
           );
         } else {
@@ -157,6 +160,7 @@ export class Lambda extends Construct {
         ...lambdaConfig,
         layers,
         filename: asset.path,
+        sourceCodeHash: `\${filebase64sha256("${asset.path}")}`,
         ...restConfig,
       };
     }
