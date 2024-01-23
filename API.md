@@ -7073,6 +7073,7 @@ Whether to use a Docker image for the Lambda function (optional).
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.apiGatewayProtocolType">apiGatewayProtocolType</a></code> | <code>string</code> | The protocol for the API Gateway endpoint (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.customDomainName">customDomainName</a></code> | <code><a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a></code> | Custom domain name for the API Gateway endpoint (optional). |
 
 ---
@@ -7218,6 +7219,18 @@ public readonly useImage: boolean;
 - *Type:* boolean
 
 Whether to use a Docker image for the Lambda function (optional).
+
+---
+
+##### `apiGatewayProtocolType`<sup>Optional</sup> <a name="apiGatewayProtocolType" id="arc-cdk.ILambdaWithApiGateway.property.apiGatewayProtocolType"></a>
+
+```typescript
+public readonly apiGatewayProtocolType: string;
+```
+
+- *Type:* string
+
+The protocol for the API Gateway endpoint (optional).
 
 ---
 
