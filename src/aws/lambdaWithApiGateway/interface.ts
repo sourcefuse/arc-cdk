@@ -1,3 +1,4 @@
+import { GatewayProtocolType } from "./types";
 import { ILambda } from "../lambda/interface";
 
 export interface ICustomDomainName {
@@ -22,4 +23,9 @@ export interface ILambdaWithApiGateway extends ILambda {
    * Custom domain name for the API Gateway endpoint (optional)
    */
   customDomainName?: ICustomDomainName;
+
+  /**
+   * The protocol for the API Gateway endpoint (optional)
+   */
+  apiGatewayProtocolType?: GatewayProtocolType;
 }

@@ -26,6 +26,7 @@ export class LambdaWithApiGateway extends Construct {
       name,
       customDomainName,
       tags,
+      apiGatewayProtocolType,
       ...restConfig
     } = config;
 
@@ -55,7 +56,7 @@ export class LambdaWithApiGateway extends Construct {
       "apigatewayv2Api",
       {
         name: resourceName,
-        protocolType: "HTTP",
+        protocolType: apiGatewayProtocolType || "HTTP",
         target: lambda.arn,
         tags: defaultTags.tagsOutput,
       }
