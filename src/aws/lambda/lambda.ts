@@ -12,6 +12,7 @@ import { CreateEcrImage } from "../createEcrImage";
 import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
 import { Tags } from "../tags";
+import { UpdateEnvironmentVariable } from "./utils";
 
 export class Lambda extends Construct {
   /**
@@ -184,7 +185,9 @@ export class Lambda extends Construct {
     }
 
     if (envVars) {
-      this.lambdaFunc.putEnvironment({ variables: envVars });
+      this.lambdaFunc.putEnvironment({
+        variables: UpdateEnvironmentVariable(this, envVars)
+      });
     }
 
     this.arn = this.lambdaFunc.arn;
