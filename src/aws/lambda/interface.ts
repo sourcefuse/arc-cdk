@@ -71,5 +71,5 @@ export interface ILambda extends IBase, LambdaConfig {
 }
 
 export interface IEnvironmentVars {
-  [key: string]: string
+  [key: string]: string;
 }

@@ -6,13 +6,13 @@ import {
 import { AssetType, TerraformAsset } from "cdktf";
 import { Construct } from "constructs";
 import { ILambda } from "./interface";
+import { UpdateEnvironmentVariable } from "./utils";
 import { iamLambdaPolicy, iamLambdaRole } from "../../constants";
 import { getResourceName } from "../../utils/helper";
 import { CreateEcrImage } from "../createEcrImage";
 import { CreateEcrRepository } from "../createEcrRepository";
 import { CreateLambdaRole } from "../createLambdaRole";
 import { Tags } from "../tags";
-import { UpdateEnvironmentVariable } from "./utils";
 
 export class Lambda extends Construct {
   /**
@@ -186,7 +186,7 @@ export class Lambda extends Construct {
 
     if (envVars) {
       this.lambdaFunc.putEnvironment({
-        variables: UpdateEnvironmentVariable(this, envVars)
+        variables: UpdateEnvironmentVariable(this, envVars),
       });
     }
 
