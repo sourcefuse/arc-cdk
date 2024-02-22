@@ -27,6 +27,7 @@
     + [ICreateLambdaRole](#icreatelambdarole-)
     + [ICreateRole](#icreaterole-)
     + [ICustomDomainName](#icustomdomainname-)
+    + [IEnvironmentVars](#ienvironmentvars-)
     + [ILambda](#ilambda-)
     + [ILambdaWithApiGateway](#ilambdawithapigateway-)
     + [ILambdaWithCloudWatchEvent](#ilambdawithcloudwatchevent-)
@@ -6881,6 +6882,12 @@ public readonly acmCertificateArn: string;
 The ARN of the ACM certificate to use for SSL/TLS encryption.
 
 ---
+
+### IEnvironmentVars <a name="IEnvironmentVars" id="arc-cdk.IEnvironmentVars"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IEnvironmentVars">IEnvironmentVars</a>
+
+
 
 ### ILambda <a name="ILambda" id="arc-cdk.ILambda"></a>
 

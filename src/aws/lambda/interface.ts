@@ -69,3 +69,7 @@ export interface ILambda extends IBase, LambdaConfig {
    */
   useImage?: boolean;
 }
+
+export interface IEnvironmentVars {
+  [key: string]: string;
+}
