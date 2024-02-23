@@ -26,6 +26,11 @@
       "type": "build"
     },
     {
+      "name": "@types/mime-types",
+      "version": "^2.1.4",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^14",
       "type": "build"
@@ -147,6 +152,11 @@
     {
       "name": "typescript",
       "type": "build"
+    },
+    {
+      "name": "mime-types",
+      "version": "2.1.35",
+      "type": "bundled"
     },
     {
       "name": "short-unique-id",

@@ -10,3 +10,4 @@ export * from "./lambdaWithApiGateway";
 export * from "./lambdaWithCloudWatchEvent";
 export * from "./lambdaWithSns";
 export * from "./lambdaWithSqs";
+export * from "./s3";

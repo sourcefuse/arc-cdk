@@ -16,6 +16,7 @@
     + [LambdaWithCloudWatchEvent](#lambdawithcloudwatchevent-)
     + [LambdaWithSns](#lambdawithsns-)
     + [LambdaWithSqs](#lambdawithsqs-)
+    + [S3](#s3-)
     + [S3BackendStack](#s3backendstack-)
   * [Structs](#structs-)
     + [DbModuleConfig](#dbmoduleconfig-)
@@ -3998,6 +3999,197 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+
+### S3 <a name="S3" id="arc-cdk.S3"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.S3.Initializer"></a>
+
+```typescript
+import { S3 } from 'arc-cdk'
+
+new S3(scope: Construct, id: string, config: S3BucketConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.S3.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.S3.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.S3.Initializer.parameter.config">config</a></code> | <code>@cdktf/provider-aws.s3Bucket.S3BucketConfig</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.S3.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.S3.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.S3.Initializer.parameter.config"></a>
+
+- *Type:* @cdktf/provider-aws.s3Bucket.S3BucketConfig
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.S3.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#arc-cdk.S3.syncFilesToBucket">syncFilesToBucket</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3.updateBucketPreventDestroy">updateBucketPreventDestroy</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3.updateCorsConfiguration">updateCorsConfiguration</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3.uploadFolderAsZip">uploadFolderAsZip</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.S3.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `syncFilesToBucket` <a name="syncFilesToBucket" id="arc-cdk.S3.syncFilesToBucket"></a>
+
+```typescript
+public syncFilesToBucket(dirPath: string): void
+```
+
+###### `dirPath`<sup>Required</sup> <a name="dirPath" id="arc-cdk.S3.syncFilesToBucket.parameter.dirPath"></a>
+
+- *Type:* string
+
+---
+
+##### `updateBucketPreventDestroy` <a name="updateBucketPreventDestroy" id="arc-cdk.S3.updateBucketPreventDestroy"></a>
+
+```typescript
+public updateBucketPreventDestroy(enable: boolean): void
+```
+
+###### `enable`<sup>Required</sup> <a name="enable" id="arc-cdk.S3.updateBucketPreventDestroy.parameter.enable"></a>
+
+- *Type:* boolean
+
+---
+
+##### `updateCorsConfiguration` <a name="updateCorsConfiguration" id="arc-cdk.S3.updateCorsConfiguration"></a>
+
+```typescript
+public updateCorsConfiguration(corsRule: S3BucketCorsConfigurationCorsRule[]): void
+```
+
+###### `corsRule`<sup>Required</sup> <a name="corsRule" id="arc-cdk.S3.updateCorsConfiguration.parameter.corsRule"></a>
+
+- *Type:* @cdktf/provider-aws.s3BucketCorsConfiguration.S3BucketCorsConfigurationCorsRule[]
+
+---
+
+##### `uploadFolderAsZip` <a name="uploadFolderAsZip" id="arc-cdk.S3.uploadFolderAsZip"></a>
+
+```typescript
+public uploadFolderAsZip(zipPath: string): void
+```
+
+###### `zipPath`<sup>Required</sup> <a name="zipPath" id="arc-cdk.S3.uploadFolderAsZip.parameter.zipPath"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.S3.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.S3.isConstruct"></a>
+
+```typescript
+import { S3 } from 'arc-cdk'
+
+S3.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.S3.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.S3.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.S3.property.arn">arn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the S3 Bucket. |
+| <code><a href="#arc-cdk.S3.property.bucket">bucket</a></code> | <code>@cdktf/provider-aws.s3Bucket.S3Bucket</code> | Amazon Resource Bucket. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.S3.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="arc-cdk.S3.property.arn"></a>
+
+```typescript
+public readonly arn: string;
+```
+
+- *Type:* string
+
+The Amazon Resource Name (ARN) of the S3 Bucket.
+
+---
+
+##### `bucket`<sup>Required</sup> <a name="bucket" id="arc-cdk.S3.property.bucket"></a>
+
+```typescript
+public readonly bucket: S3Bucket;
+```
+
+- *Type:* @cdktf/provider-aws.s3Bucket.S3Bucket
+
+Amazon Resource Bucket.
 
 ---
 

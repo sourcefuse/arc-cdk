@@ -10,7 +10,7 @@ const project = new cdktf.ConstructLibraryCdktf({
   prettier: true,
   releaseToNpm: true,
   peerDeps: ["@cdktf/provider-aws@^12.0.4", "@cdktf/provider-docker@^6.0.1"],
-  bundledDeps: ["short-unique-id@^4.4.4"],
+  bundledDeps: ["short-unique-id@^4.4.4", "mime-types@2.1.35"],
   depsUpgrade: false,
   devDeps: [
     "markdown-toc@^1.2.0",
@@ -20,6 +20,7 @@ const project = new cdktf.ConstructLibraryCdktf({
     "commitizen@^4.3.0",
     "cz-conventional-changelog@^3.3.0",
     "cz-customizable@^7.0.0",
+    "@types/mime-types@^2.1.4",
   ],
   keywords: ["arc", "aws", "lambda"],
   dependabot: true,

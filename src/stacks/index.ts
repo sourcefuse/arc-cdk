@@ -1,1 +1,1 @@
-export * from './s3BackendStack';
+export * from "./s3BackendStack";
