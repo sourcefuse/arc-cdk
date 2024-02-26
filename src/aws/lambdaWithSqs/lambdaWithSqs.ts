@@ -82,6 +82,9 @@ export class LambdaWithSqs extends Construct {
       tags: defaultTags.tagsOutput,
     });
 
+    // Update SQS visibility timeout if lambda has a timeout.
+    awsSqsQueue.visibilityTimeoutSeconds = config.timeout ?? 30;
+
     new aws.lambdaEventSourceMapping.LambdaEventSourceMapping( // NOSONAR
       this,
       "lambdaEventSourceMapping",
