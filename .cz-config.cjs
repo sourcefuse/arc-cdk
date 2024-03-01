@@ -24,7 +24,11 @@ module.exports = {
     {value: 'WIP', name: 'WIP:      Work in progress'},
   ],
 
-  scopes: [{name: 'core'}],
+  scopes: [
+    {name: 'core'}, 
+    {name: "lambda-with-sqs"},
+    {name: "s3"}
+  ],
 
   allowTicketNumber: true,
   isTicketNumberRequired: true,
