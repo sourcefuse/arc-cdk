@@ -74,7 +74,7 @@ export class Lambda extends Construct {
       const role = new CreateLambdaRole(this, "createLambdaRole", {
         namespace,
         environment,
-        name: resourceName,
+        name,
         iamRole: createRole.iamRole,
         iamPolicy: createRole.iamPolicy,
         tags,
