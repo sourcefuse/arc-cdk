@@ -16,6 +16,8 @@
     + [LambdaWithCloudWatchEvent](#lambdawithcloudwatchevent-)
     + [LambdaWithSns](#lambdawithsns-)
     + [LambdaWithSqs](#lambdawithsqs-)
+    + [S3](#s3-)
+    + [S3BackendStack](#s3backendstack-)
   * [Structs](#structs-)
     + [DbModuleConfig](#dbmoduleconfig-)
     + [ElastiCacheConfig](#elasticacheconfig-)
@@ -3997,6 +3999,483 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+
+### S3 <a name="S3" id="arc-cdk.S3"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.S3.Initializer"></a>
+
+```typescript
+import { S3 } from 'arc-cdk'
+
+new S3(scope: Construct, id: string, config: S3BucketConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.S3.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.S3.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.S3.Initializer.parameter.config">config</a></code> | <code>@cdktf/provider-aws.s3Bucket.S3BucketConfig</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.S3.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.S3.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.S3.Initializer.parameter.config"></a>
+
+- *Type:* @cdktf/provider-aws.s3Bucket.S3BucketConfig
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.S3.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#arc-cdk.S3.syncFilesToBucket">syncFilesToBucket</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3.updateBucketPreventDestroy">updateBucketPreventDestroy</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3.updateCorsConfiguration">updateCorsConfiguration</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3.uploadFolderAsZip">uploadFolderAsZip</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.S3.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `syncFilesToBucket` <a name="syncFilesToBucket" id="arc-cdk.S3.syncFilesToBucket"></a>
+
+```typescript
+public syncFilesToBucket(dirPath: string): void
+```
+
+###### `dirPath`<sup>Required</sup> <a name="dirPath" id="arc-cdk.S3.syncFilesToBucket.parameter.dirPath"></a>
+
+- *Type:* string
+
+---
+
+##### `updateBucketPreventDestroy` <a name="updateBucketPreventDestroy" id="arc-cdk.S3.updateBucketPreventDestroy"></a>
+
+```typescript
+public updateBucketPreventDestroy(enable: boolean): void
+```
+
+###### `enable`<sup>Required</sup> <a name="enable" id="arc-cdk.S3.updateBucketPreventDestroy.parameter.enable"></a>
+
+- *Type:* boolean
+
+---
+
+##### `updateCorsConfiguration` <a name="updateCorsConfiguration" id="arc-cdk.S3.updateCorsConfiguration"></a>
+
+```typescript
+public updateCorsConfiguration(corsRule: S3BucketCorsConfigurationCorsRule[]): void
+```
+
+###### `corsRule`<sup>Required</sup> <a name="corsRule" id="arc-cdk.S3.updateCorsConfiguration.parameter.corsRule"></a>
+
+- *Type:* @cdktf/provider-aws.s3BucketCorsConfiguration.S3BucketCorsConfigurationCorsRule[]
+
+---
+
+##### `uploadFolderAsZip` <a name="uploadFolderAsZip" id="arc-cdk.S3.uploadFolderAsZip"></a>
+
+```typescript
+public uploadFolderAsZip(zipPath: string): void
+```
+
+###### `zipPath`<sup>Required</sup> <a name="zipPath" id="arc-cdk.S3.uploadFolderAsZip.parameter.zipPath"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.S3.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.S3.isConstruct"></a>
+
+```typescript
+import { S3 } from 'arc-cdk'
+
+S3.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.S3.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.S3.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.S3.property.arn">arn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the S3 Bucket. |
+| <code><a href="#arc-cdk.S3.property.bucket">bucket</a></code> | <code>@cdktf/provider-aws.s3Bucket.S3Bucket</code> | Amazon Resource Bucket. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.S3.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="arc-cdk.S3.property.arn"></a>
+
+```typescript
+public readonly arn: string;
+```
+
+- *Type:* string
+
+The Amazon Resource Name (ARN) of the S3 Bucket.
+
+---
+
+##### `bucket`<sup>Required</sup> <a name="bucket" id="arc-cdk.S3.property.bucket"></a>
+
+```typescript
+public readonly bucket: S3Bucket;
+```
+
+- *Type:* @cdktf/provider-aws.s3Bucket.S3Bucket
+
+Amazon Resource Bucket.
+
+---
+
+
+### S3BackendStack <a name="S3BackendStack" id="arc-cdk.S3BackendStack"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.S3BackendStack.Initializer"></a>
+
+```typescript
+import { S3BackendStack } from 'arc-cdk'
+
+new S3BackendStack(scope: Construct, id: string, config: S3BackendConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.S3BackendStack.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.Initializer.parameter.config">config</a></code> | <code>cdktf.S3BackendConfig</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.S3BackendStack.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.S3BackendStack.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="arc-cdk.S3BackendStack.Initializer.parameter.config"></a>
+
+- *Type:* cdktf.S3BackendConfig
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.S3BackendStack.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#arc-cdk.S3BackendStack.addDependency">addDependency</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.addOverride">addOverride</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.allProviders">allProviders</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.dependsOn">dependsOn</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.ensureBackendExists">ensureBackendExists</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.getLogicalId">getLogicalId</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.prepareStack">prepareStack</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.registerIncomingCrossStackReference">registerIncomingCrossStackReference</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.registerOutgoingCrossStackReference">registerOutgoingCrossStackReference</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.runAllValidations">runAllValidations</a></code> | Run all validations on the stack. |
+| <code><a href="#arc-cdk.S3BackendStack.toTerraform">toTerraform</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.S3BackendStack.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addDependency` <a name="addDependency" id="arc-cdk.S3BackendStack.addDependency"></a>
+
+```typescript
+public addDependency(dependency: TerraformStack): void
+```
+
+###### `dependency`<sup>Required</sup> <a name="dependency" id="arc-cdk.S3BackendStack.addDependency.parameter.dependency"></a>
+
+- *Type:* cdktf.TerraformStack
+
+---
+
+##### `addOverride` <a name="addOverride" id="arc-cdk.S3BackendStack.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+###### `path`<sup>Required</sup> <a name="path" id="arc-cdk.S3BackendStack.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="arc-cdk.S3BackendStack.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+##### `allProviders` <a name="allProviders" id="arc-cdk.S3BackendStack.allProviders"></a>
+
+```typescript
+public allProviders(): TerraformProvider[]
+```
+
+##### `dependsOn` <a name="dependsOn" id="arc-cdk.S3BackendStack.dependsOn"></a>
+
+```typescript
+public dependsOn(stack: TerraformStack): boolean
+```
+
+###### `stack`<sup>Required</sup> <a name="stack" id="arc-cdk.S3BackendStack.dependsOn.parameter.stack"></a>
+
+- *Type:* cdktf.TerraformStack
+
+---
+
+##### `ensureBackendExists` <a name="ensureBackendExists" id="arc-cdk.S3BackendStack.ensureBackendExists"></a>
+
+```typescript
+public ensureBackendExists(): TerraformBackend
+```
+
+##### `getLogicalId` <a name="getLogicalId" id="arc-cdk.S3BackendStack.getLogicalId"></a>
+
+```typescript
+public getLogicalId(tfElement: TerraformElement | Node): string
+```
+
+###### `tfElement`<sup>Required</sup> <a name="tfElement" id="arc-cdk.S3BackendStack.getLogicalId.parameter.tfElement"></a>
+
+- *Type:* cdktf.TerraformElement | constructs.Node
+
+---
+
+##### `prepareStack` <a name="prepareStack" id="arc-cdk.S3BackendStack.prepareStack"></a>
+
+```typescript
+public prepareStack(): void
+```
+
+##### `registerIncomingCrossStackReference` <a name="registerIncomingCrossStackReference" id="arc-cdk.S3BackendStack.registerIncomingCrossStackReference"></a>
+
+```typescript
+public registerIncomingCrossStackReference(fromStack: TerraformStack): TerraformRemoteState
+```
+
+###### `fromStack`<sup>Required</sup> <a name="fromStack" id="arc-cdk.S3BackendStack.registerIncomingCrossStackReference.parameter.fromStack"></a>
+
+- *Type:* cdktf.TerraformStack
+
+---
+
+##### `registerOutgoingCrossStackReference` <a name="registerOutgoingCrossStackReference" id="arc-cdk.S3BackendStack.registerOutgoingCrossStackReference"></a>
+
+```typescript
+public registerOutgoingCrossStackReference(identifier: string): TerraformOutput
+```
+
+###### `identifier`<sup>Required</sup> <a name="identifier" id="arc-cdk.S3BackendStack.registerOutgoingCrossStackReference.parameter.identifier"></a>
+
+- *Type:* string
+
+---
+
+##### `runAllValidations` <a name="runAllValidations" id="arc-cdk.S3BackendStack.runAllValidations"></a>
+
+```typescript
+public runAllValidations(): void
+```
+
+Run all validations on the stack.
+
+##### `toTerraform` <a name="toTerraform" id="arc-cdk.S3BackendStack.toTerraform"></a>
+
+```typescript
+public toTerraform(): any
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.S3BackendStack.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#arc-cdk.S3BackendStack.isStack">isStack</a></code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.S3BackendStack.isConstruct"></a>
+
+```typescript
+import { S3BackendStack } from 'arc-cdk'
+
+S3BackendStack.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.S3BackendStack.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isStack` <a name="isStack" id="arc-cdk.S3BackendStack.isStack"></a>
+
+```typescript
+import { S3BackendStack } from 'arc-cdk'
+
+S3BackendStack.isStack(x: any)
+```
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.S3BackendStack.isStack.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="arc-cdk.S3BackendStack.of"></a>
+
+```typescript
+import { S3BackendStack } from 'arc-cdk'
+
+S3BackendStack.of(construct: IConstruct)
+```
+
+###### `construct`<sup>Required</sup> <a name="construct" id="arc-cdk.S3BackendStack.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.S3BackendStack.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.S3BackendStack.property.dependencies">dependencies</a></code> | <code>cdktf.TerraformStack[]</code> | *No description.* |
+| <code><a href="#arc-cdk.S3BackendStack.property.synthesizer">synthesizer</a></code> | <code>cdktf.IStackSynthesizer</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.S3BackendStack.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `dependencies`<sup>Required</sup> <a name="dependencies" id="arc-cdk.S3BackendStack.property.dependencies"></a>
+
+```typescript
+public readonly dependencies: TerraformStack[];
+```
+
+- *Type:* cdktf.TerraformStack[]
+
+---
+
+##### `synthesizer`<sup>Required</sup> <a name="synthesizer" id="arc-cdk.S3BackendStack.property.synthesizer"></a>
+
+```typescript
+public readonly synthesizer: IStackSynthesizer;
+```
+
+- *Type:* cdktf.IStackSynthesizer
 
 ---
 

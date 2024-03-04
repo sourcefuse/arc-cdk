@@ -39,6 +39,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@types/jest": "^27",
+    "@types/mime-types": "^2.1.4",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
@@ -74,9 +75,11 @@
     "constructs": "^10.1.232"
   },
   "dependencies": {
+    "mime-types": "2.1.35",
     "short-unique-id": "^4.4.4"
   },
   "bundledDependencies": [
+    "mime-types",
     "short-unique-id"
   ],
   "keywords": [
