@@ -1,1 +1,1 @@
-export type GatewayProtocolType = "HTTP" | "WEBSOCKET";
+export type GatewayProtocolType = "HTTP" | "WEBSOCKET" | "REST";
