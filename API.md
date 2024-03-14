@@ -3461,6 +3461,7 @@ Any object.
 | <code><a href="#arc-cdk.Lambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#arc-cdk.Lambda.property.arn">arn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the Lambda function. |
 | <code><a href="#arc-cdk.Lambda.property.functionName">functionName</a></code> | <code>string</code> | The name of the Lambda function. |
+| <code><a href="#arc-cdk.Lambda.property.invokeArn">invokeArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#arc-cdk.Lambda.property.lambdaFunc">lambdaFunc</a></code> | <code>@cdktf/provider-aws.lambdaFunction.LambdaFunction</code> | The LambdaFunction construct representing the created Lambda function. |
 
 ---
@@ -3498,6 +3499,16 @@ public readonly functionName: string;
 - *Type:* string
 
 The name of the Lambda function.
+
+---
+
+##### `invokeArn`<sup>Required</sup> <a name="invokeArn" id="arc-cdk.Lambda.property.invokeArn"></a>
+
+```typescript
+public readonly invokeArn: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -3633,7 +3644,7 @@ The tree node.
 
 ---
 
-##### `url`<sup>Required</sup> <a name="url" id="arc-cdk.LambdaWithApiGateway.property.url"></a>
+##### `url`<sup>Optional</sup> <a name="url" id="arc-cdk.LambdaWithApiGateway.property.url"></a>
 
 ```typescript
 public readonly url: string;
@@ -7559,8 +7570,16 @@ Whether to use a Docker image for the Lambda function (optional).
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.roleArn">roleArn</a></code> | <code>string</code> | The ARN of an existing IAM role to attach to the Lambda function (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.s3Bucket">s3Bucket</a></code> | <code>string</code> | The S3 bucket to upload the Lambda function's code to (optional). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.useImage">useImage</a></code> | <code>boolean</code> | Whether to use a Docker image for the Lambda function (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.accessControlAllowHeaderVal">accessControlAllowHeaderVal</a></code> | <code>string</code> | Access-Control-Allow-Headers value (Only applicable to REST type). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.accessControlAllowMethodVal">accessControlAllowMethodVal</a></code> | <code>string</code> | Access-Control-Allow-Headers value (Only applicable to REST type). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.accessControlAllowOriginVal">accessControlAllowOriginVal</a></code> | <code>string</code> | Access-Control-Allow-Headers value (Only applicable to REST type). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.apiGatewayProtocolType">apiGatewayProtocolType</a></code> | <code>string</code> | The protocol for the API Gateway endpoint (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.apiKeyName">apiKeyName</a></code> | <code>string</code> | API Key name(Only applicable to REST type). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.apiKeyRequired">apiKeyRequired</a></code> | <code>boolean</code> | IS API Key required (Only applicable to REST type). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.apiRestMethod">apiRestMethod</a></code> | <code>string</code> | REST API gateway Method (Only applicable to REST type). |
 | <code><a href="#arc-cdk.ILambdaWithApiGateway.property.customDomainName">customDomainName</a></code> | <code><a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a></code> | Custom domain name for the API Gateway endpoint (optional). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.stageName">stageName</a></code> | <code>string</code> | API Gateway Stage (Only applicable to REST type). |
+| <code><a href="#arc-cdk.ILambdaWithApiGateway.property.usagePlanName">usagePlanName</a></code> | <code>string</code> | API Key name(Only applicable to REST type). |
 
 ---
 
@@ -7708,6 +7727,42 @@ Whether to use a Docker image for the Lambda function (optional).
 
 ---
 
+##### `accessControlAllowHeaderVal`<sup>Optional</sup> <a name="accessControlAllowHeaderVal" id="arc-cdk.ILambdaWithApiGateway.property.accessControlAllowHeaderVal"></a>
+
+```typescript
+public readonly accessControlAllowHeaderVal: string;
+```
+
+- *Type:* string
+
+Access-Control-Allow-Headers value (Only applicable to REST type).
+
+---
+
+##### `accessControlAllowMethodVal`<sup>Optional</sup> <a name="accessControlAllowMethodVal" id="arc-cdk.ILambdaWithApiGateway.property.accessControlAllowMethodVal"></a>
+
+```typescript
+public readonly accessControlAllowMethodVal: string;
+```
+
+- *Type:* string
+
+Access-Control-Allow-Headers value (Only applicable to REST type).
+
+---
+
+##### `accessControlAllowOriginVal`<sup>Optional</sup> <a name="accessControlAllowOriginVal" id="arc-cdk.ILambdaWithApiGateway.property.accessControlAllowOriginVal"></a>
+
+```typescript
+public readonly accessControlAllowOriginVal: string;
+```
+
+- *Type:* string
+
+Access-Control-Allow-Headers value (Only applicable to REST type).
+
+---
+
 ##### `apiGatewayProtocolType`<sup>Optional</sup> <a name="apiGatewayProtocolType" id="arc-cdk.ILambdaWithApiGateway.property.apiGatewayProtocolType"></a>
 
 ```typescript
@@ -7720,6 +7775,42 @@ The protocol for the API Gateway endpoint (optional).
 
 ---
 
+##### `apiKeyName`<sup>Optional</sup> <a name="apiKeyName" id="arc-cdk.ILambdaWithApiGateway.property.apiKeyName"></a>
+
+```typescript
+public readonly apiKeyName: string;
+```
+
+- *Type:* string
+
+API Key name(Only applicable to REST type).
+
+---
+
+##### `apiKeyRequired`<sup>Optional</sup> <a name="apiKeyRequired" id="arc-cdk.ILambdaWithApiGateway.property.apiKeyRequired"></a>
+
+```typescript
+public readonly apiKeyRequired: boolean;
+```
+
+- *Type:* boolean
+
+IS API Key required (Only applicable to REST type).
+
+---
+
+##### `apiRestMethod`<sup>Optional</sup> <a name="apiRestMethod" id="arc-cdk.ILambdaWithApiGateway.property.apiRestMethod"></a>
+
+```typescript
+public readonly apiRestMethod: string;
+```
+
+- *Type:* string
+
+REST API gateway Method (Only applicable to REST type).
+
+---
+
 ##### `customDomainName`<sup>Optional</sup> <a name="customDomainName" id="arc-cdk.ILambdaWithApiGateway.property.customDomainName"></a>
 
 ```typescript
@@ -7729,6 +7820,30 @@ public readonly customDomainName: ICustomDomainName;
 - *Type:* <a href="#arc-cdk.ICustomDomainName">ICustomDomainName</a>
 
 Custom domain name for the API Gateway endpoint (optional).
+
+---
+
+##### `stageName`<sup>Optional</sup> <a name="stageName" id="arc-cdk.ILambdaWithApiGateway.property.stageName"></a>
+
+```typescript
+public readonly stageName: string;
+```
+
+- *Type:* string
+
+API Gateway Stage (Only applicable to REST type).
+
+---
+
+##### `usagePlanName`<sup>Optional</sup> <a name="usagePlanName" id="arc-cdk.ILambdaWithApiGateway.property.usagePlanName"></a>
+
+```typescript
+public readonly usagePlanName: string;
+```
+
+- *Type:* string
+
+API Key name(Only applicable to REST type).
 
 ---
 

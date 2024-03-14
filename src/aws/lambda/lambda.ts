@@ -29,6 +29,7 @@ export class Lambda extends Construct {
    * The LambdaFunction construct representing the created Lambda function.
    */
   lambdaFunc: LambdaFunction;
+  invokeArn: string;
 
   /**
    * @param scope The parent construct of this stack.
@@ -192,5 +193,6 @@ export class Lambda extends Construct {
 
     this.arn = this.lambdaFunc.arn;
     this.functionName = this.lambdaFunc.functionName;
+    this.invokeArn = this.lambdaFunc.invokeArn;
   }
 }
