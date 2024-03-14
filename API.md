@@ -5,36 +5,58 @@
 - [API Reference](#api-reference-)
   * [Constructs](#constructs-)
     + [ApiGatewayCustomDomainName](#apigatewaycustomdomainname-)
+    + [Codebuild](#codebuild-)
     + [CreateAcmCertificate](#createacmcertificate-)
     + [CreateEcrImage](#createecrimage-)
     + [CreateEcrRepository](#createecrrepository-)
     + [CreateLambdaRole](#createlambdarole-)
     + [DbModule](#dbmodule-)
     + [ElastiCache](#elasticache-)
+    + [IAMRole](#iamrole-)
     + [Lambda](#lambda-)
     + [LambdaWithApiGateway](#lambdawithapigateway-)
     + [LambdaWithCloudWatchEvent](#lambdawithcloudwatchevent-)
     + [LambdaWithSns](#lambdawithsns-)
     + [LambdaWithSqs](#lambdawithsqs-)
+    + [RestApiGateway](#restapigateway-)
     + [S3](#s3-)
     + [S3BackendStack](#s3backendstack-)
+    + [WAFIPSet](#wafipset-)
+    + [WafWebACL](#wafwebacl-)
   * [Structs](#structs-)
     + [DbModuleConfig](#dbmoduleconfig-)
     + [ElastiCacheConfig](#elasticacheconfig-)
   * [Protocols](#protocols-)
     + [IAcmCertificate](#iacmcertificate-)
     + [IApiGatewayCustomDomainName](#iapigatewaycustomdomainname-)
+    + [ICodebuildProjectConfig](#icodebuildprojectconfig-)
     + [ICreateEcrImage](#icreateecrimage-)
     + [ICreateEcrRepository](#icreateecrrepository-)
     + [ICreateLambdaRole](#icreatelambdarole-)
     + [ICreateRole](#icreaterole-)
     + [ICustomDomainName](#icustomdomainname-)
     + [IEnvironmentVars](#ienvironmentvars-)
+    + [IIamPolicyConfig](#iiampolicyconfig-)
+    + [IIamRole](#iiamrole-)
+    + [IIamRoleConfig](#iiamroleconfig-)
     + [ILambda](#ilambda-)
     + [ILambdaWithApiGateway](#ilambdawithapigateway-)
     + [ILambdaWithCloudWatchEvent](#ilambdawithcloudwatchevent-)
     + [ILambdaWithSns](#ilambdawithsns-)
     + [ILambdaWithSqs](#ilambdawithsqs-)
+    + [IProxyIntegration](#iproxyintegration-)
+    + [IRestAPIGatewayConfig](#irestapigatewayconfig-)
+    + [IRestAPIGatewayMethods](#irestapigatewaymethods-)
+    + [IWafv2IpSetConfig](#iwafv2ipsetconfig-)
+    + [IWafV2WebAclConfig](#iwafv2webaclconfig-)
+  * [Enums](#enums-)
+    + [APIGatewayAuthorizer](#apigatewayauthorizer-)
+    + [APIGatewayEndPointType](#apigatewayendpointtype-)
+    + [APIGatewayHTTPMethod](#apigatewayhttpmethod-)
+    + [APIGatewayLoggingLevel](#apigatewaylogginglevel-)
+    + [APIGatewayUsagePlanKey](#apigatewayusageplankey-)
+    + [WAFAggregateKeyType](#wafaggregatekeytype-)
+    + [WAFScope](#wafscope-)
 
 <!-- tocstop -->
 
@@ -159,6 +181,132 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+
+### Codebuild <a name="Codebuild" id="arc-cdk.Codebuild"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.Codebuild.Initializer"></a>
+
+```typescript
+import { Codebuild } from 'arc-cdk'
+
+new Codebuild(scope: Construct, id: string, props: ICodebuildProjectConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.Codebuild.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.Codebuild.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.Codebuild.Initializer.parameter.props">props</a></code> | <code><a href="#arc-cdk.ICodebuildProjectConfig">ICodebuildProjectConfig</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.Codebuild.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.Codebuild.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="arc-cdk.Codebuild.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#arc-cdk.ICodebuildProjectConfig">ICodebuildProjectConfig</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.Codebuild.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.Codebuild.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.Codebuild.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.Codebuild.isConstruct"></a>
+
+```typescript
+import { Codebuild } from 'arc-cdk'
+
+Codebuild.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.Codebuild.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.Codebuild.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.Codebuild.property.codebuildProject">codebuildProject</a></code> | <code>@cdktf/provider-aws.codebuildProject.CodebuildProject</code> | Codebuild Resource. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.Codebuild.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `codebuildProject`<sup>Required</sup> <a name="codebuildProject" id="arc-cdk.Codebuild.property.codebuildProject"></a>
+
+```typescript
+public readonly codebuildProject: CodebuildProject;
+```
+
+- *Type:* @cdktf/provider-aws.codebuildProject.CodebuildProject
+
+Codebuild Resource.
 
 ---
 
@@ -3356,6 +3504,130 @@ public readonly userGroupIds: string[];
 ---
 
 
+### IAMRole <a name="IAMRole" id="arc-cdk.IAMRole"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.IAMRole.Initializer"></a>
+
+```typescript
+import { IAMRole } from 'arc-cdk'
+
+new IAMRole(scope: Construct, id: string, props: IIamRole)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IAMRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.IAMRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IAMRole.Initializer.parameter.props">props</a></code> | <code><a href="#arc-cdk.IIamRole">IIamRole</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.IAMRole.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.IAMRole.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="arc-cdk.IAMRole.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#arc-cdk.IIamRole">IIamRole</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.IAMRole.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.IAMRole.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.IAMRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.IAMRole.isConstruct"></a>
+
+```typescript
+import { IAMRole } from 'arc-cdk'
+
+IAMRole.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.IAMRole.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IAMRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.IAMRole.property.iamRole">iamRole</a></code> | <code>@cdktf/provider-aws.iamRole.IamRole</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.IAMRole.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `iamRole`<sup>Required</sup> <a name="iamRole" id="arc-cdk.IAMRole.property.iamRole"></a>
+
+```typescript
+public readonly iamRole: IamRole;
+```
+
+- *Type:* @cdktf/provider-aws.iamRole.IamRole
+
+---
+
+
 ### Lambda <a name="Lambda" id="arc-cdk.Lambda"></a>
 
 #### Initializers <a name="Initializers" id="arc-cdk.Lambda.Initializer"></a>
@@ -4003,6 +4275,141 @@ The tree node.
 ---
 
 
+### RestApiGateway <a name="RestApiGateway" id="arc-cdk.RestApiGateway"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.RestApiGateway.Initializer"></a>
+
+```typescript
+import { RestApiGateway } from 'arc-cdk'
+
+new RestApiGateway(scope: Construct, id: string, props: IRestAPIGatewayConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.RestApiGateway.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.RestApiGateway.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.RestApiGateway.Initializer.parameter.props">props</a></code> | <code><a href="#arc-cdk.IRestAPIGatewayConfig">IRestAPIGatewayConfig</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.RestApiGateway.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.RestApiGateway.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="arc-cdk.RestApiGateway.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#arc-cdk.IRestAPIGatewayConfig">IRestAPIGatewayConfig</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.RestApiGateway.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.RestApiGateway.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.RestApiGateway.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.RestApiGateway.isConstruct"></a>
+
+```typescript
+import { RestApiGateway } from 'arc-cdk'
+
+RestApiGateway.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.RestApiGateway.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.RestApiGateway.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.RestApiGateway.property.apiGateway">apiGateway</a></code> | <code>@cdktf/provider-aws.apiGatewayRestApi.ApiGatewayRestApi</code> | *No description.* |
+| <code><a href="#arc-cdk.RestApiGateway.property.deployment">deployment</a></code> | <code>@cdktf/provider-aws.apiGatewayDeployment.ApiGatewayDeployment</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.RestApiGateway.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `apiGateway`<sup>Required</sup> <a name="apiGateway" id="arc-cdk.RestApiGateway.property.apiGateway"></a>
+
+```typescript
+public readonly apiGateway: ApiGatewayRestApi;
+```
+
+- *Type:* @cdktf/provider-aws.apiGatewayRestApi.ApiGatewayRestApi
+
+---
+
+##### `deployment`<sup>Required</sup> <a name="deployment" id="arc-cdk.RestApiGateway.property.deployment"></a>
+
+```typescript
+public readonly deployment: ApiGatewayDeployment;
+```
+
+- *Type:* @cdktf/provider-aws.apiGatewayDeployment.ApiGatewayDeployment
+
+---
+
+
 ### S3 <a name="S3" id="arc-cdk.S3"></a>
 
 #### Initializers <a name="Initializers" id="arc-cdk.S3.Initializer"></a>
@@ -4476,6 +4883,254 @@ public readonly synthesizer: IStackSynthesizer;
 ```
 
 - *Type:* cdktf.IStackSynthesizer
+
+---
+
+
+### WAFIPSet <a name="WAFIPSet" id="arc-cdk.WAFIPSet"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.WAFIPSet.Initializer"></a>
+
+```typescript
+import { WAFIPSet } from 'arc-cdk'
+
+new WAFIPSet(scope: Construct, id: string, props: IWafv2IpSetConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.WAFIPSet.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.WAFIPSet.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.WAFIPSet.Initializer.parameter.props">props</a></code> | <code><a href="#arc-cdk.IWafv2IpSetConfig">IWafv2IpSetConfig</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.WAFIPSet.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.WAFIPSet.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="arc-cdk.WAFIPSet.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#arc-cdk.IWafv2IpSetConfig">IWafv2IpSetConfig</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.WAFIPSet.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.WAFIPSet.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.WAFIPSet.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.WAFIPSet.isConstruct"></a>
+
+```typescript
+import { WAFIPSet } from 'arc-cdk'
+
+WAFIPSet.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.WAFIPSet.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.WAFIPSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.WAFIPSet.property.ipSet">ipSet</a></code> | <code>@cdktf/provider-aws.wafv2IpSet.Wafv2IpSet</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.WAFIPSet.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `ipSet`<sup>Required</sup> <a name="ipSet" id="arc-cdk.WAFIPSet.property.ipSet"></a>
+
+```typescript
+public readonly ipSet: Wafv2IpSet;
+```
+
+- *Type:* @cdktf/provider-aws.wafv2IpSet.Wafv2IpSet
+
+---
+
+
+### WafWebACL <a name="WafWebACL" id="arc-cdk.WafWebACL"></a>
+
+#### Initializers <a name="Initializers" id="arc-cdk.WafWebACL.Initializer"></a>
+
+```typescript
+import { WafWebACL } from 'arc-cdk'
+
+new WafWebACL(scope: Construct, id: string, props: IWafV2WebAclConfig)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.WafWebACL.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#arc-cdk.WafWebACL.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.WafWebACL.Initializer.parameter.props">props</a></code> | <code><a href="#arc-cdk.IWafV2WebAclConfig">IWafV2WebAclConfig</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="arc-cdk.WafWebACL.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="arc-cdk.WafWebACL.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="arc-cdk.WafWebACL.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#arc-cdk.IWafV2WebAclConfig">IWafV2WebAclConfig</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.WafWebACL.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="arc-cdk.WafWebACL.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.WafWebACL.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="arc-cdk.WafWebACL.isConstruct"></a>
+
+```typescript
+import { WafWebACL } from 'arc-cdk'
+
+WafWebACL.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="arc-cdk.WafWebACL.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.WafWebACL.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#arc-cdk.WafWebACL.property.wafv2WebACL">wafv2WebACL</a></code> | <code>@cdktf/provider-aws.wafv2WebAcl.Wafv2WebAcl</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="arc-cdk.WafWebACL.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `wafv2WebACL`<sup>Required</sup> <a name="wafv2WebACL" id="arc-cdk.WafWebACL.property.wafv2WebACL"></a>
+
+```typescript
+public readonly wafv2WebACL: Wafv2WebAcl;
+```
+
+- *Type:* @cdktf/provider-aws.wafv2WebAcl.Wafv2WebAcl
 
 ---
 
@@ -7081,6 +7736,29 @@ The name of the deployment stage associated with the custom domain (if any).
 
 ---
 
+### ICodebuildProjectConfig <a name="ICodebuildProjectConfig" id="arc-cdk.ICodebuildProjectConfig"></a>
+
+- *Implemented By:* <a href="#arc-cdk.ICodebuildProjectConfig">ICodebuildProjectConfig</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.ICodebuildProjectConfig.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.ICodebuildProjectConfig.property.namespace"></a>
+
+```typescript
+public readonly namespace: string;
+```
+
+- *Type:* string
+
+---
+
 ### ICreateEcrImage <a name="ICreateEcrImage" id="arc-cdk.ICreateEcrImage"></a>
 
 - *Implemented By:* <a href="#arc-cdk.ICreateEcrImage">ICreateEcrImage</a>
@@ -7367,6 +8045,102 @@ The ARN of the ACM certificate to use for SSL/TLS encryption.
 - *Implemented By:* <a href="#arc-cdk.IEnvironmentVars">IEnvironmentVars</a>
 
 
+
+### IIamPolicyConfig <a name="IIamPolicyConfig" id="arc-cdk.IIamPolicyConfig"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IIamPolicyConfig">IIamPolicyConfig</a>
+
+
+
+### IIamRole <a name="IIamRole" id="arc-cdk.IIamRole"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IIamRole">IIamRole</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IIamRole.property.environment">environment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IIamRole.property.iamRoleConfig">iamRoleConfig</a></code> | <code><a href="#arc-cdk.IIamRoleConfig">IIamRoleConfig</a></code> | *No description.* |
+| <code><a href="#arc-cdk.IIamRole.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IIamRole.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#arc-cdk.IIamRole.property.iamPolicyConfig">iamPolicyConfig</a></code> | <code><a href="#arc-cdk.IIamPolicyConfig">IIamPolicyConfig</a></code> | *No description.* |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.IIamRole.property.environment"></a>
+
+```typescript
+public readonly environment: string;
+```
+
+- *Type:* string
+
+---
+
+##### `iamRoleConfig`<sup>Required</sup> <a name="iamRoleConfig" id="arc-cdk.IIamRole.property.iamRoleConfig"></a>
+
+```typescript
+public readonly iamRoleConfig: IIamRoleConfig;
+```
+
+- *Type:* <a href="#arc-cdk.IIamRoleConfig">IIamRoleConfig</a>
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.IIamRole.property.namespace"></a>
+
+```typescript
+public readonly namespace: string;
+```
+
+- *Type:* string
+
+---
+
+##### `tags`<sup>Required</sup> <a name="tags" id="arc-cdk.IIamRole.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `iamPolicyConfig`<sup>Optional</sup> <a name="iamPolicyConfig" id="arc-cdk.IIamRole.property.iamPolicyConfig"></a>
+
+```typescript
+public readonly iamPolicyConfig: IIamPolicyConfig;
+```
+
+- *Type:* <a href="#arc-cdk.IIamPolicyConfig">IIamPolicyConfig</a>
+
+---
+
+### IIamRoleConfig <a name="IIamRoleConfig" id="arc-cdk.IIamRoleConfig"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IIamRoleConfig">IIamRoleConfig</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IIamRoleConfig.property.managedPolicyArns">managedPolicyArns</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `managedPolicyArns`<sup>Optional</sup> <a name="managedPolicyArns" id="arc-cdk.IIamRoleConfig.property.managedPolicyArns"></a>
+
+```typescript
+public readonly managedPolicyArns: string[];
+```
+
+- *Type:* string[]
+
+---
 
 ### ILambda <a name="ILambda" id="arc-cdk.ILambda"></a>
 
@@ -8373,6 +9147,650 @@ public readonly receiveWaitTimeSeconds: number;
 - *Type:* number
 
 The length of time, in seconds, for which the call waits for a message to arrive in the queue before returning.
+
+---
+
+### IProxyIntegration <a name="IProxyIntegration" id="arc-cdk.IProxyIntegration"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IProxyIntegration">IProxyIntegration</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IProxyIntegration.property.methods">methods</a></code> | <code><a href="#arc-cdk.IRestAPIGatewayMethods">IRestAPIGatewayMethods</a>[]</code> | *No description.* |
+| <code><a href="#arc-cdk.IProxyIntegration.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IProxyIntegration.property.path">path</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `methods`<sup>Required</sup> <a name="methods" id="arc-cdk.IProxyIntegration.property.methods"></a>
+
+```typescript
+public readonly methods: IRestAPIGatewayMethods[];
+```
+
+- *Type:* <a href="#arc-cdk.IRestAPIGatewayMethods">IRestAPIGatewayMethods</a>[]
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.IProxyIntegration.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="arc-cdk.IProxyIntegration.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+---
+
+### IRestAPIGatewayConfig <a name="IRestAPIGatewayConfig" id="arc-cdk.IRestAPIGatewayConfig"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IRestAPIGatewayConfig">IRestAPIGatewayConfig</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.environment">environment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.name">name</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#name ApiGatewayRestApi#name}. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.proxyIntegrations">proxyIntegrations</a></code> | <code><a href="#arc-cdk.IProxyIntegration">IProxyIntegration</a>[]</code> | Array of Proxy Integrations. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.region">region</a></code> | <code>string</code> | Region of API Gateway. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.stageName">stageName</a></code> | <code>string</code> | Stage Name of the API Gateway. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.type">type</a></code> | <code><a href="#arc-cdk.APIGatewayEndPointType">APIGatewayEndPointType</a></code> | Type of API Gateway. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.apiKeyBurstLimit">apiKeyBurstLimit</a></code> | <code>number</code> | API Key Burst Limit. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.apiKeyName">apiKeyName</a></code> | <code>string</code> | Name of the API Key. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.apiKeyRateLimit">apiKeyRateLimit</a></code> | <code>number</code> | API Key Rate Limit Per Sec. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.apiKeyRequired">apiKeyRequired</a></code> | <code>boolean</code> | API Key Required? |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.apiKeyUsagePlanName">apiKeyUsagePlanName</a></code> | <code>string</code> | Name of the Usage Plan. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.dataTraceEnabled">dataTraceEnabled</a></code> | <code>boolean</code> | Enable Data Tracking. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.loggingLevel">loggingLevel</a></code> | <code><a href="#arc-cdk.APIGatewayLoggingLevel">APIGatewayLoggingLevel</a></code> | API Gateway Logging Level. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.throttlingBurstLimit">throttlingBurstLimit</a></code> | <code>number</code> | Throttling Burst Limit. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.throttlingRateLimit">throttlingRateLimit</a></code> | <code>number</code> | Throttling Rate limit. |
+| <code><a href="#arc-cdk.IRestAPIGatewayConfig.property.webAclArn">webAclArn</a></code> | <code>string</code> | Web ACL ARN to attach with API Gateway.. |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.IRestAPIGatewayConfig.property.environment"></a>
+
+```typescript
+public readonly environment: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.IRestAPIGatewayConfig.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#name ApiGatewayRestApi#name}.
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.IRestAPIGatewayConfig.property.namespace"></a>
+
+```typescript
+public readonly namespace: string;
+```
+
+- *Type:* string
+
+---
+
+##### `proxyIntegrations`<sup>Required</sup> <a name="proxyIntegrations" id="arc-cdk.IRestAPIGatewayConfig.property.proxyIntegrations"></a>
+
+```typescript
+public readonly proxyIntegrations: IProxyIntegration[];
+```
+
+- *Type:* <a href="#arc-cdk.IProxyIntegration">IProxyIntegration</a>[]
+
+Array of Proxy Integrations.
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="arc-cdk.IRestAPIGatewayConfig.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+Region of API Gateway.
+
+---
+
+##### `stageName`<sup>Required</sup> <a name="stageName" id="arc-cdk.IRestAPIGatewayConfig.property.stageName"></a>
+
+```typescript
+public readonly stageName: string;
+```
+
+- *Type:* string
+
+Stage Name of the API Gateway.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="arc-cdk.IRestAPIGatewayConfig.property.type"></a>
+
+```typescript
+public readonly type: APIGatewayEndPointType;
+```
+
+- *Type:* <a href="#arc-cdk.APIGatewayEndPointType">APIGatewayEndPointType</a>
+
+Type of API Gateway.
+
+---
+
+##### `apiKeyBurstLimit`<sup>Optional</sup> <a name="apiKeyBurstLimit" id="arc-cdk.IRestAPIGatewayConfig.property.apiKeyBurstLimit"></a>
+
+```typescript
+public readonly apiKeyBurstLimit: number;
+```
+
+- *Type:* number
+
+API Key Burst Limit.
+
+Default value is 5000.
+
+---
+
+##### `apiKeyName`<sup>Optional</sup> <a name="apiKeyName" id="arc-cdk.IRestAPIGatewayConfig.property.apiKeyName"></a>
+
+```typescript
+public readonly apiKeyName: string;
+```
+
+- *Type:* string
+
+Name of the API Key.
+
+---
+
+##### `apiKeyRateLimit`<sup>Optional</sup> <a name="apiKeyRateLimit" id="arc-cdk.IRestAPIGatewayConfig.property.apiKeyRateLimit"></a>
+
+```typescript
+public readonly apiKeyRateLimit: number;
+```
+
+- *Type:* number
+
+API Key Rate Limit Per Sec.
+
+Default value is 10000 Per Second
+
+---
+
+##### `apiKeyRequired`<sup>Optional</sup> <a name="apiKeyRequired" id="arc-cdk.IRestAPIGatewayConfig.property.apiKeyRequired"></a>
+
+```typescript
+public readonly apiKeyRequired: boolean;
+```
+
+- *Type:* boolean
+
+API Key Required?
+
+---
+
+##### `apiKeyUsagePlanName`<sup>Optional</sup> <a name="apiKeyUsagePlanName" id="arc-cdk.IRestAPIGatewayConfig.property.apiKeyUsagePlanName"></a>
+
+```typescript
+public readonly apiKeyUsagePlanName: string;
+```
+
+- *Type:* string
+
+Name of the Usage Plan.
+
+---
+
+##### `dataTraceEnabled`<sup>Optional</sup> <a name="dataTraceEnabled" id="arc-cdk.IRestAPIGatewayConfig.property.dataTraceEnabled"></a>
+
+```typescript
+public readonly dataTraceEnabled: boolean;
+```
+
+- *Type:* boolean
+
+Enable Data Tracking.
+
+Defaults to false.
+
+---
+
+##### `loggingLevel`<sup>Optional</sup> <a name="loggingLevel" id="arc-cdk.IRestAPIGatewayConfig.property.loggingLevel"></a>
+
+```typescript
+public readonly loggingLevel: APIGatewayLoggingLevel;
+```
+
+- *Type:* <a href="#arc-cdk.APIGatewayLoggingLevel">APIGatewayLoggingLevel</a>
+
+API Gateway Logging Level.
+
+Default is OFF.
+
+---
+
+##### `throttlingBurstLimit`<sup>Optional</sup> <a name="throttlingBurstLimit" id="arc-cdk.IRestAPIGatewayConfig.property.throttlingBurstLimit"></a>
+
+```typescript
+public readonly throttlingBurstLimit: number;
+```
+
+- *Type:* number
+
+Throttling Burst Limit.
+
+Default is -1.
+
+---
+
+##### `throttlingRateLimit`<sup>Optional</sup> <a name="throttlingRateLimit" id="arc-cdk.IRestAPIGatewayConfig.property.throttlingRateLimit"></a>
+
+```typescript
+public readonly throttlingRateLimit: number;
+```
+
+- *Type:* number
+
+Throttling Rate limit.
+
+Default is -1.
+
+---
+
+##### `webAclArn`<sup>Optional</sup> <a name="webAclArn" id="arc-cdk.IRestAPIGatewayConfig.property.webAclArn"></a>
+
+```typescript
+public readonly webAclArn: string;
+```
+
+- *Type:* string
+
+Web ACL ARN to attach with API Gateway..
+
+---
+
+### IRestAPIGatewayMethods <a name="IRestAPIGatewayMethods" id="arc-cdk.IRestAPIGatewayMethods"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IRestAPIGatewayMethods">IRestAPIGatewayMethods</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.lambdaName">lambdaName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.alias">alias</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.apiKeyRequired">apiKeyRequired</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.authorization">authorization</a></code> | <code><a href="#arc-cdk.APIGatewayAuthorizer">APIGatewayAuthorizer</a></code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.method">method</a></code> | <code><a href="#arc-cdk.APIGatewayHTTPMethod">APIGatewayHTTPMethod</a></code> | *No description.* |
+| <code><a href="#arc-cdk.IRestAPIGatewayMethods.property.schema">schema</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `lambdaName`<sup>Required</sup> <a name="lambdaName" id="arc-cdk.IRestAPIGatewayMethods.property.lambdaName"></a>
+
+```typescript
+public readonly lambdaName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="arc-cdk.IRestAPIGatewayMethods.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `alias`<sup>Optional</sup> <a name="alias" id="arc-cdk.IRestAPIGatewayMethods.property.alias"></a>
+
+```typescript
+public readonly alias: string;
+```
+
+- *Type:* string
+
+---
+
+##### `apiKeyRequired`<sup>Optional</sup> <a name="apiKeyRequired" id="arc-cdk.IRestAPIGatewayMethods.property.apiKeyRequired"></a>
+
+```typescript
+public readonly apiKeyRequired: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `authorization`<sup>Optional</sup> <a name="authorization" id="arc-cdk.IRestAPIGatewayMethods.property.authorization"></a>
+
+```typescript
+public readonly authorization: APIGatewayAuthorizer;
+```
+
+- *Type:* <a href="#arc-cdk.APIGatewayAuthorizer">APIGatewayAuthorizer</a>
+
+---
+
+##### `method`<sup>Optional</sup> <a name="method" id="arc-cdk.IRestAPIGatewayMethods.property.method"></a>
+
+```typescript
+public readonly method: APIGatewayHTTPMethod;
+```
+
+- *Type:* <a href="#arc-cdk.APIGatewayHTTPMethod">APIGatewayHTTPMethod</a>
+
+---
+
+##### `schema`<sup>Optional</sup> <a name="schema" id="arc-cdk.IRestAPIGatewayMethods.property.schema"></a>
+
+```typescript
+public readonly schema: string;
+```
+
+- *Type:* string
+
+---
+
+### IWafv2IpSetConfig <a name="IWafv2IpSetConfig" id="arc-cdk.IWafv2IpSetConfig"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IWafv2IpSetConfig">IWafv2IpSetConfig</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IWafv2IpSetConfig.property.environment">environment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IWafv2IpSetConfig.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.IWafv2IpSetConfig.property.environment"></a>
+
+```typescript
+public readonly environment: string;
+```
+
+- *Type:* string
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.IWafv2IpSetConfig.property.namespace"></a>
+
+```typescript
+public readonly namespace: string;
+```
+
+- *Type:* string
+
+---
+
+### IWafV2WebAclConfig <a name="IWafV2WebAclConfig" id="arc-cdk.IWafV2WebAclConfig"></a>
+
+- *Implemented By:* <a href="#arc-cdk.IWafV2WebAclConfig">IWafV2WebAclConfig</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#arc-cdk.IWafV2WebAclConfig.property.environment">environment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IWafV2WebAclConfig.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#arc-cdk.IWafV2WebAclConfig.property.rule">rule</a></code> | <code>@cdktf/provider-aws.wafv2WebAcl.Wafv2WebAclRule[]</code> | *No description.* |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="arc-cdk.IWafV2WebAclConfig.property.environment"></a>
+
+```typescript
+public readonly environment: string;
+```
+
+- *Type:* string
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="arc-cdk.IWafV2WebAclConfig.property.namespace"></a>
+
+```typescript
+public readonly namespace: string;
+```
+
+- *Type:* string
+
+---
+
+##### `rule`<sup>Required</sup> <a name="rule" id="arc-cdk.IWafV2WebAclConfig.property.rule"></a>
+
+```typescript
+public readonly rule: Wafv2WebAclRule[];
+```
+
+- *Type:* @cdktf/provider-aws.wafv2WebAcl.Wafv2WebAclRule[]
+
+---
+
+## Enums <a name="Enums" id="Enums"></a>
+
+### APIGatewayAuthorizer <a name="APIGatewayAuthorizer" id="arc-cdk.APIGatewayAuthorizer"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.APIGatewayAuthorizer.AWS_IAM">AWS_IAM</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayAuthorizer.NONE">NONE</a></code> | *No description.* |
+
+---
+
+##### `AWS_IAM` <a name="AWS_IAM" id="arc-cdk.APIGatewayAuthorizer.AWS_IAM"></a>
+
+---
+
+
+##### `NONE` <a name="NONE" id="arc-cdk.APIGatewayAuthorizer.NONE"></a>
+
+---
+
+
+### APIGatewayEndPointType <a name="APIGatewayEndPointType" id="arc-cdk.APIGatewayEndPointType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.APIGatewayEndPointType.EDGE_OPTIMIZED">EDGE_OPTIMIZED</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayEndPointType.PRIVATE">PRIVATE</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayEndPointType.REGIONAL">REGIONAL</a></code> | *No description.* |
+
+---
+
+##### `EDGE_OPTIMIZED` <a name="EDGE_OPTIMIZED" id="arc-cdk.APIGatewayEndPointType.EDGE_OPTIMIZED"></a>
+
+---
+
+
+##### `PRIVATE` <a name="PRIVATE" id="arc-cdk.APIGatewayEndPointType.PRIVATE"></a>
+
+---
+
+
+##### `REGIONAL` <a name="REGIONAL" id="arc-cdk.APIGatewayEndPointType.REGIONAL"></a>
+
+---
+
+
+### APIGatewayHTTPMethod <a name="APIGatewayHTTPMethod" id="arc-cdk.APIGatewayHTTPMethod"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.APIGatewayHTTPMethod.ANY">ANY</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayHTTPMethod.DELETE">DELETE</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayHTTPMethod.GET">GET</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayHTTPMethod.PATCH">PATCH</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayHTTPMethod.POST">POST</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayHTTPMethod.PUT">PUT</a></code> | *No description.* |
+
+---
+
+##### `ANY` <a name="ANY" id="arc-cdk.APIGatewayHTTPMethod.ANY"></a>
+
+---
+
+
+##### `DELETE` <a name="DELETE" id="arc-cdk.APIGatewayHTTPMethod.DELETE"></a>
+
+---
+
+
+##### `GET` <a name="GET" id="arc-cdk.APIGatewayHTTPMethod.GET"></a>
+
+---
+
+
+##### `PATCH` <a name="PATCH" id="arc-cdk.APIGatewayHTTPMethod.PATCH"></a>
+
+---
+
+
+##### `POST` <a name="POST" id="arc-cdk.APIGatewayHTTPMethod.POST"></a>
+
+---
+
+
+##### `PUT` <a name="PUT" id="arc-cdk.APIGatewayHTTPMethod.PUT"></a>
+
+---
+
+
+### APIGatewayLoggingLevel <a name="APIGatewayLoggingLevel" id="arc-cdk.APIGatewayLoggingLevel"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.APIGatewayLoggingLevel.ERROR">ERROR</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayLoggingLevel.INFO">INFO</a></code> | *No description.* |
+| <code><a href="#arc-cdk.APIGatewayLoggingLevel.OFF">OFF</a></code> | *No description.* |
+
+---
+
+##### `ERROR` <a name="ERROR" id="arc-cdk.APIGatewayLoggingLevel.ERROR"></a>
+
+---
+
+
+##### `INFO` <a name="INFO" id="arc-cdk.APIGatewayLoggingLevel.INFO"></a>
+
+---
+
+
+##### `OFF` <a name="OFF" id="arc-cdk.APIGatewayLoggingLevel.OFF"></a>
+
+---
+
+
+### APIGatewayUsagePlanKey <a name="APIGatewayUsagePlanKey" id="arc-cdk.APIGatewayUsagePlanKey"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.APIGatewayUsagePlanKey.API_KEY">API_KEY</a></code> | *No description.* |
+
+---
+
+##### `API_KEY` <a name="API_KEY" id="arc-cdk.APIGatewayUsagePlanKey.API_KEY"></a>
+
+---
+
+
+### WAFAggregateKeyType <a name="WAFAggregateKeyType" id="arc-cdk.WAFAggregateKeyType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.WAFAggregateKeyType.CONSTANT">CONSTANT</a></code> | *No description.* |
+| <code><a href="#arc-cdk.WAFAggregateKeyType.CUSTOM_KEYS">CUSTOM_KEYS</a></code> | *No description.* |
+| <code><a href="#arc-cdk.WAFAggregateKeyType.FORWARDED_IP">FORWARDED_IP</a></code> | *No description.* |
+| <code><a href="#arc-cdk.WAFAggregateKeyType.IP">IP</a></code> | *No description.* |
+
+---
+
+##### `CONSTANT` <a name="CONSTANT" id="arc-cdk.WAFAggregateKeyType.CONSTANT"></a>
+
+---
+
+
+##### `CUSTOM_KEYS` <a name="CUSTOM_KEYS" id="arc-cdk.WAFAggregateKeyType.CUSTOM_KEYS"></a>
+
+---
+
+
+##### `FORWARDED_IP` <a name="FORWARDED_IP" id="arc-cdk.WAFAggregateKeyType.FORWARDED_IP"></a>
+
+---
+
+
+##### `IP` <a name="IP" id="arc-cdk.WAFAggregateKeyType.IP"></a>
+
+---
+
+
+### WAFScope <a name="WAFScope" id="arc-cdk.WAFScope"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#arc-cdk.WAFScope.REGIONAL">REGIONAL</a></code> | *No description.* |
+| <code><a href="#arc-cdk.WAFScope.CLOUDFRONT">CLOUDFRONT</a></code> | *No description.* |
+
+---
+
+##### `REGIONAL` <a name="REGIONAL" id="arc-cdk.WAFScope.REGIONAL"></a>
+
+---
+
+
+##### `CLOUDFRONT` <a name="CLOUDFRONT" id="arc-cdk.WAFScope.CLOUDFRONT"></a>
 
 ---
 
