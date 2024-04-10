@@ -40,4 +40,9 @@ export interface ILambdaWithSqs extends ILambda {
    * The maximum number of messages to retrieve from the queue during a single request to the Amazon SQS service.
    */
   batchSize: number;
+
+  /**
+   * Boolean designating a FIFO queue. If not set, it defaults to false making it standard.
+   */
+  fifoQueue?: boolean;
 }

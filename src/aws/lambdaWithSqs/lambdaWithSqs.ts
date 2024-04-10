@@ -28,6 +28,7 @@ export class LambdaWithSqs extends Construct {
       batchSize,
       createRole,
       tags,
+      fifoQueue,
       ...restConfig
     } = config;
 
@@ -80,6 +81,7 @@ export class LambdaWithSqs extends Construct {
       kmsMasterKeyId: kmsMasterKeyId,
       kmsDataKeyReusePeriodSeconds: kmsDataKeyReusePeriodSeconds,
       tags: defaultTags.tagsOutput,
+      fifoQueue,
     });
 
     // Update SQS visibility timeout if lambda has a timeout.
