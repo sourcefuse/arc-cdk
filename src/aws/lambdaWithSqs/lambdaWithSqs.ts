@@ -59,6 +59,7 @@ export class LambdaWithSqs extends Construct {
     //Creating DLQueue
     const resultsUpdatesDlQueue = new aws.sqsQueue.SqsQueue(this, "dlQueue", {
       name: !fifoQueue ? `${resourceName}-dlq` : `${resourceName}-dlq.fifo`,
+      fifoQueue,
       kmsMasterKeyId,
       kmsDataKeyReusePeriodSeconds,
       tags: defaultTags.tagsOutput,
