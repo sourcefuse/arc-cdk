@@ -75,7 +75,7 @@ export class LambdaWithSqs extends Construct {
       maxMessageSize,
       messageRetentionSeconds,
       receiveWaitTimeSeconds,
-      name: !fifoQueue ? resourceName : resourceName + '.fifo',
+      name: !fifoQueue ? resourceName : resourceName + ".fifo",
       policy: JSON.stringify(iamSqsPolicy),
       redrivePolicy: JSON.stringify(redrivePolicy),
       kmsMasterKeyId: kmsMasterKeyId,
