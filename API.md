@@ -8129,6 +8129,7 @@ The AWS KMS key ID for encrypting messages sent to the function.
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.maxReceiveCount">maxReceiveCount</a></code> | <code>number</code> | The number of times a message is delivered to the source queue before being moved to the dead-letter queue. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.messageRetentionSeconds">messageRetentionSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which Amazon SQS retains messages that are not deleted. |
 | <code><a href="#arc-cdk.ILambdaWithSqs.property.receiveWaitTimeSeconds">receiveWaitTimeSeconds</a></code> | <code>number</code> | The length of time, in seconds, for which the call waits for a message to arrive in the queue before returning. |
+| <code><a href="#arc-cdk.ILambdaWithSqs.property.fifoQueue">fifoQueue</a></code> | <code>boolean</code> | Boolean designating a FIFO queue. |
 
 ---
 
@@ -8373,6 +8374,20 @@ public readonly receiveWaitTimeSeconds: number;
 - *Type:* number
 
 The length of time, in seconds, for which the call waits for a message to arrive in the queue before returning.
+
+---
+
+##### `fifoQueue`<sup>Optional</sup> <a name="fifoQueue" id="arc-cdk.ILambdaWithSqs.property.fifoQueue"></a>
+
+```typescript
+public readonly fifoQueue: boolean;
+```
+
+- *Type:* boolean
+
+Boolean designating a FIFO queue.
+
+If not set, it defaults to false making it standard.
 
 ---
 
