@@ -28,4 +28,43 @@ export interface ILambdaWithApiGateway extends ILambda {
    * The protocol for the API Gateway endpoint (optional)
    */
   apiGatewayProtocolType?: GatewayProtocolType;
+
+  /**
+   * REST API gateway Method (Only applicable to REST type)
+   */
+  apiRestMethod?: string;
+
+  /**
+   * IS API Key required (Only applicable to REST type)
+   */
+  apiKeyRequired?: boolean;
+
+  /**
+   * API Key name(Only applicable to REST type)
+   */
+  apiKeyName?: string;
+  /**
+   * API Key name(Only applicable to REST type)
+   */
+  usagePlanName?: string;
+
+  /**
+   * API Gateway Stage (Only applicable to REST type)
+   */
+  stageName?: string;
+
+  /**
+   * Access-Control-Allow-Headers value (Only applicable to REST type)
+   */
+  accessControlAllowHeaderVal?: string;
+
+  /**
+   * Access-Control-Allow-Headers value (Only applicable to REST type)
+   */
+  accessControlAllowMethodVal?: string;
+
+  /**
+   * Access-Control-Allow-Headers value (Only applicable to REST type)
+   */
+  accessControlAllowOriginVal?: string;
 }
