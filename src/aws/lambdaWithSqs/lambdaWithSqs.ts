@@ -29,6 +29,7 @@ export class LambdaWithSqs extends Construct {
       createRole,
       tags,
       fifoQueue,
+      maximumConcurrency,
       ...restConfig
     } = config;
 
@@ -96,6 +97,9 @@ export class LambdaWithSqs extends Construct {
         enabled: true,
         functionName: lambda.arn,
         batchSize,
+        scalingConfig: {
+          maximumConcurrency,
+        },
       }
     );
   }
