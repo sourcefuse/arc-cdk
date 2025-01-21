@@ -45,4 +45,9 @@ export interface ILambdaWithSqs extends ILambda {
    * Boolean designating a FIFO queue. If not set, it defaults to false making it standard.
    */
   fifoQueue?: boolean;
+
+  /**
+   * The maximum number of concurrent lambda instances.
+   */
+  maximumConcurrency?: number;
 }
