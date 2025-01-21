@@ -28,6 +28,7 @@ export class LambdaWithSqs extends Construct {
       batchSize,
       createRole,
       tags,
+      functionResponseTypes,
       fifoQueue,
       ...restConfig
     } = config;
@@ -96,6 +97,7 @@ export class LambdaWithSqs extends Construct {
         enabled: true,
         functionName: lambda.arn,
         batchSize,
+        functionResponseTypes,
       }
     );
   }
